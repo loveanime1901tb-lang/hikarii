@@ -37,25 +37,11 @@ app.get('/api/health', (req, res) => {
 
 // 2. Config management
 app.get('/api/config', async (req, res) => {
-  const exampleConfig = await readJsonFile(path.join(DATA_DIR, 'config.json.example'), {});
-  const config = await readJsonFile(path.join(DATA_DIR, 'config.json'), {
-    apiKey: process.env.GEMINI_API_KEY || '',
-    selectedModel: 'gemini-flash-lite-latest',
-    dailyGoal: 10,
-    stats: { totalXp: 120, completedExercises: 5, streakDays: 3 }
-  });
-  if (!config.apiKey && process.env.GEMINI_API_KEY) {
-    config.apiKey = process.env.GEMINI_API_KEY;
-  }
-  res.json(config);
+  const config = await readJsonFile(path.join(DATA_DIR, 'config.json'), {});
+  res.json({ selectedModel: config.selectedModel || 'gemini-flash-lite-latest', hasServerKey: Boolean(process.env.GEMINI_API_KEY || config.apiKey) });
 });
-
-app.post('/api/config', async (req, res) => {
-  const current = await readJsonFile(path.join(DATA_DIR, 'config.json'), {});
-  const updated = { ...current, ...req.body };
-  await writeJsonFile(path.join(DATA_DIR, 'config.json'), updated);
-  res.json({ ok: true, config: updated });
-});
+// Server configuration is edited locally or using environment variables.
+app.post('/api/config', (req, res) => res.status(405).json({ok:false,error:'Cấu hình máy chủ chỉ được chỉnh trực tiếp trên máy chủ.'}));
 
 // 3. Lessons API
 app.get('/api/lessons/:type', async (req, res) => {
@@ -125,7 +111,7 @@ app.get('/api/dictionary/lookup', async (req, res) => {
   }
 
   try {
-    const dictRes = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
+    const dictRes = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`, {signal: AbortSignal.timeout(8000)});
     if (dictRes.ok) {
       const data = await dictRes.json();
       const first = data[0];
@@ -167,16 +153,12 @@ async function getEffectiveApiKey(providedKey) {
     return providedKey.trim();
   }
   const config = await readJsonFile(path.join(DATA_DIR, 'config.json'), {});
-  return config.apiKey || process.env.GEMINI_API_KEY || '';
+  return process.env.GEMINI_API_KEY || config.apiKey || '';
 }
 
 async function getEffectiveModel(providedModel) {
   if (providedModel && providedModel.trim()) {
     const m = providedModel.trim();
-    // Auto-migrate away from deprecated model names
-    if (m.includes('2.5') || m.includes('2.0') || m.includes('1.5')) {
-      return 'gemini-flash-lite-latest';
-    }
     return m;
   }
   const config = await readJsonFile(path.join(DATA_DIR, 'config.json'), {});
@@ -191,7 +173,7 @@ app.post('/api/gemini/scan-models', async (req, res) => {
   }
 
   try {
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(apiKey)}`);
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${encodeURIComponent(apiKey)}`, {signal: AbortSignal.timeout(20000)});
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       const msg = errorData.error?.message || `HTTP ${response.status} ${response.statusText}`;
@@ -213,12 +195,7 @@ app.post('/api/gemini/scan-models', async (req, res) => {
                !name.includes('transcribe') && 
                !name.includes('computer-use') && 
                !name.includes('banana') && 
-               !name.includes('robotics') && 
-               !name.includes('2.5-flash') && 
-               !name.includes('2.5-pro') && 
-               !name.includes('1.5-flash') && 
-               !name.includes('1.5-pro') && 
-               !name.includes('2.0-flash');
+               !name.includes('robotics');
       })
       .map(m => {
         const cleanId = m.name.replace(/^models\//, '');
@@ -272,7 +249,7 @@ async function callGeminiApi({ apiKey, model, prompt, responseFormatJson = false
   }
 
   let activeModel = model;
-  if (!activeModel || activeModel.includes('2.5') || activeModel.includes('2.0') || activeModel.includes('1.5')) {
+  if (!activeModel) {
     activeModel = 'gemini-flash-lite-latest';
   }
 
@@ -298,7 +275,8 @@ async function callGeminiApi({ apiKey, model, prompt, responseFormatJson = false
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(bodyPayload)
+      body: JSON.stringify(bodyPayload),
+      signal: AbortSignal.timeout(25000)
     });
 
     if (!response.ok) {
@@ -369,7 +347,7 @@ app.post('/api/gemini/evaluate', async (req, res) => {
   const effectiveApiKey = await getEffectiveApiKey(apiKey);
   const effectiveModel = await getEffectiveModel(model);
 
-  if (!englishUser || !vietnamese) {
+  if (typeof englishUser !== 'string' || typeof vietnamese !== 'string' || !englishUser.trim() || englishUser.length > 2000 || vietnamese.length > 4000 || (referenceEn != null && typeof referenceEn !== 'string')) {
     return res.status(400).json({ error: 'Missing input fields' });
   }
 
@@ -429,14 +407,21 @@ Chỉ trả về định dạng JSON hợp lệ, không bọc trong markdown cod
   }
 
   // Fallback: Local rule-based intelligent similarity check
-  const normalize = (t) => t.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().split(/\s+/);
+  const normalize = (t) => t.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().split(/\s+/).filter(Boolean);
   const userWords = normalize(englishUser);
   const refWords = normalize(referenceEn || '');
 
-  let matched = 0;
-  userWords.forEach(w => {
-    if (refWords.includes(w)) matched++;
-  });
+  // Ordered token overlap: repeated words cannot inflate the result above 100.
+  const row = new Array(refWords.length + 1).fill(0);
+  for (const word of userWords) {
+    let previous = 0;
+    for (let j = 1; j <= refWords.length; j++) {
+      const old = row[j];
+      row[j] = word === refWords[j - 1] ? previous + 1 : Math.max(row[j], row[j - 1]);
+      previous = old;
+    }
+  }
+  const matched = row[refWords.length];
 
   const precision = userWords.length > 0 ? (matched / userWords.length) : 0;
   const recall = refWords.length > 0 ? (matched / refWords.length) : 0;

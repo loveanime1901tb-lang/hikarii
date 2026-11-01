@@ -1,5 +1,155 @@
 [
   {
+    "id": "hikarii-conversation-advanced",
+    "title": "Thảo luận về một ý tưởng",
+    "description": "Phản biện mang tính xây dựng và đề xuất thỏa hiệp.",
+    "objective": "Phản biện mang tính xây dựng và đề xuất thỏa hiệp.",
+    "grammar": "Dùng while để nhượng bộ và what if để đề xuất.",
+    "level": "advanced",
+    "dialogues": [
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Mình nghĩ chúng ta nên chuyển toàn bộ buổi họp sang trực tuyến.",
+        "en": "I think we should move all our meetings online.",
+        "hints": [
+          "I think we"
+        ],
+        "explanation": "Should diễn đạt đề xuất hoặc lời khuyên."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Mặc dù mình hiểu lợi ích, mình lo điều đó có thể làm giảm tương tác trực tiếp.",
+        "en": "While I understand the benefits, I am concerned that it might reduce face-to-face interaction.",
+        "hints": [
+          "While I understand"
+        ],
+        "explanation": "While mở đầu ý nhượng bộ. Might giúp thể hiện lo ngại dưới dạng khả năng."
+      },
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Bạn đề xuất cách nào khác không?",
+        "en": "Do you have an alternative in mind?",
+        "hints": [
+          "Do you have"
+        ],
+        "explanation": "Have something in mind có nghĩa có ý tưởng hoặc dự định."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Hay là chúng ta thử cách kết hợp trước khi đưa ra quyết định cuối cùng?",
+        "en": "What if we tried a hybrid approach before making a final decision?",
+        "hints": [
+          "What if we"
+        ],
+        "explanation": "What if + quá khứ đơn có thể dùng để đưa ra một gợi ý thăm dò, không chỉ kể quá khứ."
+      }
+    ]
+  },
+  {
+    "id": "hikarii-conversation-intermediate",
+    "title": "Hỏi đường khi đi du lịch",
+    "description": "Hỏi thông tin và xác nhận hướng đi một cách lịch sự.",
+    "objective": "Hỏi thông tin và xác nhận hướng đi một cách lịch sự.",
+    "grammar": "Câu hỏi gián tiếp dùng trật tự câu kể.",
+    "level": "intermediate",
+    "dialogues": [
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Xin lỗi, bạn cần giúp gì không?",
+        "en": "Excuse me, do you need any help?",
+        "hints": [
+          "Excuse me, do"
+        ],
+        "explanation": "Any thường xuất hiện trong câu hỏi trung tính."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Bạn có thể chỉ cho mình cách đến bảo tàng không?",
+        "en": "Could you tell me how to get to the museum?",
+        "hints": [
+          "Could you tell"
+        ],
+        "explanation": "How to get to + địa điểm: cách đi đến một nơi."
+      },
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Đi thẳng rồi rẽ trái ở ngã tư tiếp theo.",
+        "en": "Go straight ahead and turn left at the next intersection.",
+        "hints": [
+          "Go straight ahead"
+        ],
+        "explanation": "Go và turn là động từ nguyên mẫu trong câu mệnh lệnh."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Mất khoảng bao lâu để đi bộ đến đó?",
+        "en": "How long does it take to walk there?",
+        "hints": [
+          "How long does"
+        ],
+        "explanation": "How long does it take to ...? hỏi khoảng thời gian cần thiết."
+      }
+    ]
+  },
+  {
+    "id": "hikarii-conversation-beginner",
+    "title": "Rủ bạn học cùng",
+    "description": "Luyện rủ bạn và thống nhất thời gian.",
+    "objective": "Luyện rủ bạn và thống nhất thời gian.",
+    "grammar": "Dùng Let’s để đề nghị; dùng can để nói khả năng.",
+    "level": "beginner",
+    "dialogues": [
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Bạn có muốn học tiếng Anh cùng mình không?",
+        "en": "Would you like to study English with me?",
+        "hints": [
+          "Would you like"
+        ],
+        "explanation": "Would you like to + động từ là lời mời lịch sự."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Có chứ. Chúng ta có thể gặp nhau ở thư viện.",
+        "en": "Sure. We can meet at the library.",
+        "hints": [
+          "Sure. We can"
+        ],
+        "explanation": "Sau can dùng động từ nguyên mẫu. At the library chỉ địa điểm gặp."
+      },
+      {
+        "role": "system",
+        "speaker": "Bạn đồng hành",
+        "vi": "Bạn rảnh lúc mấy giờ?",
+        "en": "What time are you free?",
+        "hints": [
+          "What time are"
+        ],
+        "explanation": "What time dùng để hỏi giờ cụ thể."
+      },
+      {
+        "role": "user",
+        "speaker": "Bạn",
+        "vi": "Mình rảnh lúc ba giờ. Hãy gặp nhau lúc đó nhé.",
+        "en": "I am free at three. Let’s meet then.",
+        "hints": [
+          "I am free"
+        ],
+        "explanation": "Dùng at trước giờ; Let’s + động từ nguyên mẫu để cùng đề nghị làm gì."
+      }
+    ]
+  },
+  {
     "id": "conv-1",
     "title": "Ordering Coffee and Pastries at a Café",
     "level": "beginner",
@@ -16,7 +166,10 @@
         "role": "user",
         "vi": "Chào bạn, cho tôi một ly cà phê sữa đá lớn và một chiếc bánh sừng bò nhé.",
         "en": "Hi, I would like a large iced coffee with milk and a croissant, please.",
-        "hints": ["large iced coffee with milk", "a croissant, please"]
+        "hints": [
+          "large iced coffee with milk",
+          "a croissant, please"
+        ]
       },
       {
         "speaker": "Barista",
@@ -29,7 +182,10 @@
         "role": "user",
         "vi": "Cho tôi sữa yến mạch nhé, và ít đường thôi.",
         "en": "Oat milk, please, and less sugar.",
-        "hints": ["Oat milk, please", "less sugar"]
+        "hints": [
+          "Oat milk, please",
+          "less sugar"
+        ]
       },
       {
         "speaker": "Barista",
@@ -42,7 +198,10 @@
         "role": "user",
         "vi": "Tôi sẽ thanh toán bằng thẻ tín dụng. Cảm ơn bạn!",
         "en": "I will pay with a credit card. Thank you!",
-        "hints": ["pay with a credit card", "Thank you"]
+        "hints": [
+          "pay with a credit card",
+          "Thank you"
+        ]
       }
     ]
   },
@@ -63,7 +222,10 @@
         "role": "user",
         "vi": "Được chứ, mình vừa hoàn thành xong việc kiểm thử các tính năng mới.",
         "en": "Sure, I have just finished testing the new features.",
-        "hints": ["Sure, I have just finished", "testing the new features"]
+        "hints": [
+          "Sure, I have just finished",
+          "testing the new features"
+        ]
       },
       {
         "speaker": "Sarah",
@@ -76,7 +238,11 @@
         "role": "user",
         "vi": "May mắn là mọi thứ đang hoạt động ổn định và không có lỗi nghiêm trọng nào.",
         "en": "Fortunately, everything is running smoothly and there are no critical bugs.",
-        "hints": ["Fortunately", "running smoothly", "no critical bugs"]
+        "hints": [
+          "Fortunately",
+          "running smoothly",
+          "no critical bugs"
+        ]
       }
     ]
   },
@@ -97,7 +263,11 @@
         "role": "user",
         "vi": "Tôi hoàn toàn hiểu mối bận tâm của ông, và chúng tôi sẵn sàng đàm phán một cấu trúc linh hoạt hơn.",
         "en": "I completely understand your concern, and we are willing to negotiate a more flexible structure.",
-        "hints": ["completely understand your concern", "willing to negotiate", "flexible structure"]
+        "hints": [
+          "completely understand your concern",
+          "willing to negotiate",
+          "flexible structure"
+        ]
       },
       {
         "speaker": "Director Michael",
@@ -110,7 +280,11 @@
         "role": "user",
         "vi": "Điều đó nghe có vẻ hợp lý và đảm bảo lợi ích chung cho cả hai bên.",
         "en": "That sounds reasonable and ensures mutual benefits for both parties.",
-        "hints": ["sounds reasonable", "ensures mutual benefits", "for both parties"]
+        "hints": [
+          "sounds reasonable",
+          "ensures mutual benefits",
+          "for both parties"
+        ]
       }
     ]
   },
@@ -126,7 +300,11 @@
         "role": "user",
         "vi": "Xin lỗi làm phiền, bạn có thể chỉ giúp tôi đường đến ga tàu điện ngầm gần nhất không?",
         "en": "Excuse me, could you please tell me how to get to the nearest subway station?",
-        "hints": ["Excuse me", "could you please tell me", "nearest subway station"]
+        "hints": [
+          "Excuse me",
+          "could you please tell me",
+          "nearest subway station"
+        ]
       },
       {
         "speaker": "Local Citizen",
@@ -139,7 +317,10 @@
         "role": "user",
         "vi": "Đi bộ đến đó mất khoảng bao lâu vậy bạn?",
         "en": "How long does it take to walk there?",
-        "hints": ["How long does it take", "to walk there"]
+        "hints": [
+          "How long does it take",
+          "to walk there"
+        ]
       },
       {
         "speaker": "Local Citizen",
@@ -152,7 +333,10 @@
         "role": "user",
         "vi": "Cảm ơn bạn rất nhiều vì sự giúp đỡ nhiệt tình!",
         "en": "Thank you so much for your kind help!",
-        "hints": ["Thank you so much", "kind help"]
+        "hints": [
+          "Thank you so much",
+          "kind help"
+        ]
       }
     ]
   },
@@ -174,7 +358,11 @@
         "role": "user",
         "vi": "Đầu tiên, tôi sẽ kiểm tra truy vấn cơ sở dữ liệu và thêm cơ chế lưu bộ nhớ đệm với Redis.",
         "en": "First, I would examine database query performance and implement caching mechanisms using Redis.",
-        "hints": ["examine database query performance", "implement caching mechanisms", "using Redis"]
+        "hints": [
+          "examine database query performance",
+          "implement caching mechanisms",
+          "using Redis"
+        ]
       },
       {
         "speaker": "Interviewer",
@@ -187,7 +375,11 @@
         "role": "user",
         "vi": "Chúng tôi áp dụng kiến trúc hướng sự kiện với tin nhắn Kafka để đồng bộ việc xóa cache.",
         "en": "We apply an event-driven architecture using Kafka messages to synchronize cache eviction across services.",
-        "hints": ["event-driven architecture", "Kafka messages", "synchronize cache eviction"]
+        "hints": [
+          "event-driven architecture",
+          "Kafka messages",
+          "synchronize cache eviction"
+        ]
       }
     ]
   }

@@ -4,28 +4,16 @@ export class AiService {
   constructor() {
     this.apiKey = localStorage.getItem('gemini_api_key') || '';
     let storedModel = localStorage.getItem('gemini_selected_model');
-    // Sanitize any dead legacy models
-    if (!storedModel || storedModel.includes('2.5') || storedModel.includes('2.0') || storedModel.includes('1.5')) {
-      storedModel = 'gemini-flash-lite-latest';
-      localStorage.setItem('gemini_selected_model', storedModel);
-    }
-    this.selectedModel = storedModel;
+    this.selectedModel = storedModel || 'gemini-flash-lite-latest';
   }
 
   async loadConfig() {
     try {
-      const res = await fetch('/api/config');
+      const res = await fetch('/api/config', {signal: AbortSignal.timeout(10000)});
       if (res.ok) {
         const config = await res.json();
-        if (config.apiKey && (!this.apiKey || !localStorage.getItem('gemini_api_key'))) {
-          this.setApiKey(config.apiKey);
-        }
-        if (config.selectedModel) {
-          const current = localStorage.getItem('gemini_selected_model');
-          if (!current || current.includes('2.5') || current.includes('2.0') || current.includes('1.5')) {
-            this.setModel(config.selectedModel);
-          }
-        }
+        this.hasServerKey = Boolean(config.hasServerKey);
+        if (config.selectedModel && !localStorage.getItem('gemini_selected_model')) this.selectedModel = config.selectedModel;
       }
     } catch {}
   }
@@ -40,11 +28,7 @@ export class AiService {
   }
 
   setModel(model) {
-    let cleanModel = model;
-    if (cleanModel && (cleanModel.includes('2.5') || cleanModel.includes('2.0') || cleanModel.includes('1.5'))) {
-      cleanModel = 'gemini-flash-lite-latest';
-    }
-    this.selectedModel = cleanModel;
+    this.selectedModel = model || 'gemini-flash-lite-latest';
     localStorage.setItem('gemini_selected_model', this.selectedModel);
   }
 
@@ -54,11 +38,12 @@ export class AiService {
 
   // Scan available models for the given API key
   async scanAvailableModels() {
-    if (!this.apiKey) {
+    if (!this.apiKey && !this.hasServerKey) {
       throw new Error('Vui lòng nhập API Key trước khi quét danh sách model.');
     }
     const res = await fetch('/api/gemini/scan-models', {
       method: 'POST',
+      signal: AbortSignal.timeout(65000),
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ apiKey: this.apiKey })
     });
@@ -85,6 +70,7 @@ export class AiService {
     const model = modelToTest || this.selectedModel;
     const res = await fetch('/api/gemini/test', {
       method: 'POST',
+      signal: AbortSignal.timeout(65000),
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         apiKey: this.apiKey,
@@ -125,6 +111,7 @@ export class AiService {
   async evaluateTranslation({ vietnamese, englishUser, referenceEn }) {
     const res = await fetch('/api/gemini/evaluate', {
       method: 'POST',
+      signal: AbortSignal.timeout(65000),
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         vietnamese,
@@ -143,6 +130,7 @@ export class AiService {
   async generateLesson({ topic, level = 'intermediate', count = 5 }) {
     const res = await fetch('/api/gemini/generate-lesson', {
       method: 'POST',
+      signal: AbortSignal.timeout(65000),
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         topic,

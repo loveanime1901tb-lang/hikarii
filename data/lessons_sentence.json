@@ -1,5 +1,158 @@
 [
   {
+    "id": "hikarii-sentence-advanced",
+    "title": "Công nghệ và tư duy phản biện",
+    "description": "Diễn đạt quan điểm có điều kiện và tránh khẳng định tuyệt đối.",
+    "objective": "Diễn đạt quan điểm có điều kiện và tránh khẳng định tuyệt đối.",
+    "grammar": "Dùng đảo ngữ với not only và cấu trúc nhượng bộ.",
+    "category": "student-life",
+    "level": "advanced",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Công nghệ không chỉ thay đổi cách học mà còn định hình cách suy nghĩ.",
+        "en": "Not only does technology change how we learn, but it also shapes how we think.",
+        "hints": [
+          "Not only does",
+          "but it also shapes"
+        ],
+        "explanation": "Not only đứng đầu câu kéo theo đảo trợ động từ: does + chủ ngữ + động từ nguyên mẫu."
+      },
+      {
+        "id": 2,
+        "vi": "Dù tiện lợi đến đâu, AI cũng không thể thay thế hoàn toàn khả năng phán đoán của con người.",
+        "en": "However convenient AI may be, it cannot entirely replace human judgment.",
+        "hints": [
+          "However convenient",
+          "human judgment"
+        ],
+        "explanation": "However + tính từ + chủ ngữ + động từ diễn đạt ý dù ... đến đâu."
+      },
+      {
+        "id": 3,
+        "vi": "Điều quan trọng là học sinh phải kiểm chứng thông tin trước khi tin vào nó.",
+        "en": "It is essential that students verify information before accepting it.",
+        "hints": [
+          "It is essential that",
+          "verify information"
+        ],
+        "explanation": "Sau it is essential that có thể dùng động từ nguyên mẫu trong mệnh đề giả định."
+      },
+      {
+        "id": 4,
+        "vi": "Nếu không có tư duy phản biện, chúng ta có nguy cơ phụ thuộc quá mức vào công nghệ.",
+        "en": "Without critical thinking, we risk becoming overly dependent on technology.",
+        "hints": [
+          "risk becoming",
+          "dependent on"
+        ],
+        "explanation": "Risk + V-ing; dependent đi với on. Overly mang nghĩa quá mức."
+      }
+    ]
+  },
+  {
+    "id": "hikarii-sentence-intermediate",
+    "title": "Cân bằng học tập và nghỉ ngơi",
+    "description": "Nói về thói quen, lựa chọn và lời khuyên trong việc học.",
+    "objective": "Nói về thói quen, lựa chọn và lời khuyên trong việc học.",
+    "grammar": "Dùng although, if và should để nối ý và đưa lời khuyên.",
+    "category": "student-life",
+    "level": "intermediate",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Mặc dù bài tập khó, mình vẫn cố tự làm.",
+        "en": "Although the homework is difficult, I still try to do it myself.",
+        "hints": [
+          "Although",
+          "try to do it myself"
+        ],
+        "explanation": "Although mở đầu mệnh đề nhượng bộ; không thêm but trước mệnh đề còn lại."
+      },
+      {
+        "id": 2,
+        "vi": "Nếu học đều đặn, bạn sẽ nhớ từ mới lâu hơn.",
+        "en": "If you study regularly, you will remember new words for longer.",
+        "hints": [
+          "If you study",
+          "will remember"
+        ],
+        "explanation": "Điều kiện loại 1: If + hiện tại đơn, will + động từ nguyên mẫu."
+      },
+      {
+        "id": 3,
+        "vi": "Bạn nên nghỉ một chút sau mỗi giờ học.",
+        "en": "You should take a short break after every hour of studying.",
+        "hints": [
+          "should take a short break",
+          "after every hour"
+        ],
+        "explanation": "Sau should dùng động từ nguyên mẫu, không thêm to."
+      },
+      {
+        "id": 4,
+        "vi": "Mình đã học tiếng Anh được ba năm.",
+        "en": "I have studied English for three years.",
+        "hints": [
+          "have studied",
+          "for three years"
+        ],
+        "explanation": "Hiện tại hoàn thành nối quá khứ với hiện tại. For đi với khoảng thời gian."
+      }
+    ]
+  },
+  {
+    "id": "hikarii-sentence-beginner",
+    "title": "Làm quen ở câu lạc bộ",
+    "description": "Giới thiệu bản thân bằng những câu ngắn, dễ áp dụng.",
+    "objective": "Giới thiệu bản thân bằng những câu ngắn, dễ áp dụng.",
+    "grammar": "Dùng be để nói tên, tuổi; dùng like + V-ing để nói sở thích.",
+    "category": "student-life",
+    "level": "beginner",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Mình là học sinh trung học.",
+        "en": "I am a high school student.",
+        "hints": [
+          "I am",
+          "a high school student"
+        ],
+        "explanation": "Dùng a trước danh từ số ít student. I luôn đi với am."
+      },
+      {
+        "id": 2,
+        "vi": "Mình thích nghe nhạc khi rảnh.",
+        "en": "I like listening to music in my free time.",
+        "hints": [
+          "like listening to",
+          "in my free time"
+        ],
+        "explanation": "Sau like có thể dùng V-ing hoặc to + động từ. Listen đi với giới từ to."
+      },
+      {
+        "id": 3,
+        "vi": "Bạn đến từ đâu?",
+        "en": "Where are you from?",
+        "hints": [
+          "Where",
+          "are you from"
+        ],
+        "explanation": "Câu hỏi với be: từ hỏi + be + chủ ngữ. Không cần do trong câu này."
+      },
+      {
+        "id": 4,
+        "vi": "Mình muốn kết bạn mới.",
+        "en": "I want to make new friends.",
+        "hints": [
+          "want to",
+          "make new friends"
+        ],
+        "explanation": "Want + to + động từ nguyên mẫu. Make friends có nghĩa là kết bạn."
+      }
+    ]
+  },
+  {
     "id": "sent-everyday-1",
     "title": "Daily Routine & Morning Habits",
     "category": "everyday-life",
@@ -9,25 +162,37 @@
         "id": 1,
         "vi": "Tôi thường thức dậy lúc 6 giờ sáng và uống một cốc nước ấm.",
         "en": "I usually wake up at 6 AM and drink a glass of warm water.",
-        "hints": ["usually wake up", "glass of warm water"]
+        "hints": [
+          "usually wake up",
+          "glass of warm water"
+        ]
       },
       {
         "id": 2,
         "vi": "Tập thể dục buổi sáng giúp tôi cảm thấy tràn đầy năng lượng cả ngày.",
         "en": "Morning exercise helps me feel energized all day.",
-        "hints": ["Morning exercise", "energized all day"]
+        "hints": [
+          "Morning exercise",
+          "energized all day"
+        ]
       },
       {
         "id": 3,
         "vi": "Tôi luôn ăn sáng trước khi chuẩn bị đi làm.",
         "en": "I always have breakfast before getting ready for work.",
-        "hints": ["have breakfast", "getting ready for work"]
+        "hints": [
+          "have breakfast",
+          "getting ready for work"
+        ]
       },
       {
         "id": 4,
         "vi": "Tôi mất khoảng ba mươi phút để lái xe đến văn phòng.",
         "en": "It takes me about thirty minutes to drive to the office.",
-        "hints": ["It takes me about", "drive to the office"]
+        "hints": [
+          "It takes me about",
+          "drive to the office"
+        ]
       }
     ]
   },
@@ -41,25 +206,37 @@
         "id": 1,
         "vi": "Chúng ta có một cuộc họp quan trọng với đối tác vào lúc 2 giờ chiều.",
         "en": "We have an important meeting with our partners at 2 PM.",
-        "hints": ["important meeting", "with our partners"]
+        "hints": [
+          "important meeting",
+          "with our partners"
+        ]
       },
       {
         "id": 2,
         "vi": "Bạn có thể gửi cho tôi tài liệu trình chiếu trước buổi trưa được không?",
         "en": "Could you please send me the presentation slides before noon?",
-        "hints": ["presentation slides", "before noon"]
+        "hints": [
+          "presentation slides",
+          "before noon"
+        ]
       },
       {
         "id": 3,
         "vi": "Dự án này cần được hoàn thành đúng thời hạn để đảm bảo chất lượng.",
         "en": "This project needs to be completed on schedule to ensure quality.",
-        "hints": ["on schedule", "ensure quality"]
+        "hints": [
+          "on schedule",
+          "ensure quality"
+        ]
       },
       {
         "id": 4,
         "vi": "Tôi sẽ tóm tắt lại các điểm chính và gửi qua email cho mọi người.",
         "en": "I will summarize the key points and email them to everyone.",
-        "hints": ["summarize the key points", "email them to everyone"]
+        "hints": [
+          "summarize the key points",
+          "email them to everyone"
+        ]
       }
     ]
   },
@@ -73,25 +250,37 @@
         "id": 1,
         "vi": "Xin chào, tôi muốn làm thủ tục nhận phòng theo tên Nguyễn Văn A.",
         "en": "Hello, I would like to check in under the name of Nguyen Van A.",
-        "hints": ["would like to check in", "under the name of"]
+        "hints": [
+          "would like to check in",
+          "under the name of"
+        ]
       },
       {
         "id": 2,
         "vi": "Bữa sáng có được bao gồm trong giá phòng không?",
         "en": "Is breakfast included in the room rate?",
-        "hints": ["Is breakfast included", "room rate"]
+        "hints": [
+          "Is breakfast included",
+          "room rate"
+        ]
       },
       {
         "id": 3,
         "vi": "Chuyến bay tiếp theo của tôi sẽ cất cánh từ cổng số năm.",
         "en": "My connecting flight will depart from gate number five.",
-        "hints": ["connecting flight", "depart from gate"]
+        "hints": [
+          "connecting flight",
+          "depart from gate"
+        ]
       },
       {
         "id": 4,
         "vi": "Làm ơn cho tôi hỏi đường ra bến xe buýt gần nhất ở đâu?",
         "en": "Could you please tell me where the nearest bus station is?",
-        "hints": ["nearest bus station", "Could you please tell me"]
+        "hints": [
+          "nearest bus station",
+          "Could you please tell me"
+        ]
       }
     ]
   },
@@ -105,19 +294,28 @@
         "id": 1,
         "vi": "Trí tuệ nhân tạo đang biến đổi căn bản cách thức chúng ta học tập và làm việc.",
         "en": "Artificial intelligence is fundamentally transforming the way we study and work.",
-        "hints": ["fundamentally transforming", "the way we study and work"]
+        "hints": [
+          "fundamentally transforming",
+          "the way we study and work"
+        ]
       },
       {
         "id": 2,
         "vi": "Khả năng tự động hóa các tác vụ lặp đi lặp lại giúp nâng cao năng suất đáng kể.",
         "en": "The ability to automate repetitive tasks significantly enhances productivity.",
-        "hints": ["automate repetitive tasks", "significantly enhances productivity"]
+        "hints": [
+          "automate repetitive tasks",
+          "significantly enhances productivity"
+        ]
       },
       {
         "id": 3,
         "vi": "Tuy nhiên, bảo mật dữ liệu và quyền riêng tư vẫn là những vấn đề cần được quan tâm hàng đầu.",
         "en": "However, data security and privacy remain top-priority concerns.",
-        "hints": ["data security and privacy", "top-priority concerns"]
+        "hints": [
+          "data security and privacy",
+          "top-priority concerns"
+        ]
       }
     ]
   },
@@ -131,25 +329,37 @@
         "id": 1,
         "vi": "Chúng tôi rất muốn thảo luận về các điều khoản sửa đổi của hợp đồng cung ứng.",
         "en": "We would like to discuss the amended terms of the supply contract.",
-        "hints": ["amended terms", "supply contract"]
+        "hints": [
+          "amended terms",
+          "supply contract"
+        ]
       },
       {
         "id": 2,
         "vi": "Nếu bên bạn có thể giảm 5% đơn giá, chúng tôi cam kết tăng gấp đôi sản lượng đặt hàng.",
         "en": "If your team can offer a 5% discount, we commit to doubling our order volume.",
-        "hints": ["offer a 5% discount", "commit to doubling", "order volume"]
+        "hints": [
+          "offer a 5% discount",
+          "commit to doubling",
+          "order volume"
+        ]
       },
       {
         "id": 3,
         "vi": "Thời hạn thanh toán trong vòng 30 ngày kể từ ngày giao hàng là phù hợp với chính sách của chúng tôi.",
         "en": "Payment within thirty days of delivery aligns well with our company policy.",
-        "hints": ["Payment within thirty days", "aligns well with"]
+        "hints": [
+          "Payment within thirty days",
+          "aligns well with"
+        ]
       },
       {
         "id": 4,
         "vi": "Chúng ta hãy cùng nhau hướng tới một thỏa thuận đôi bên cùng có lợi.",
         "en": "Let us work together toward establishing a mutually beneficial partnership.",
-        "hints": ["mutually beneficial partnership"]
+        "hints": [
+          "mutually beneficial partnership"
+        ]
       }
     ]
   },
@@ -163,19 +373,30 @@
         "id": 1,
         "vi": "Ngân hàng trung ương quyết định thắt chặt chính sách tiền tệ nhằm kiềm chế áp lực lạm phát kéo dài.",
         "en": "The central bank resolved to tighten monetary policy in an attempt to curb persistent inflationary pressures.",
-        "hints": ["central bank resolved", "tighten monetary policy", "curb persistent inflationary pressures"]
+        "hints": [
+          "central bank resolved",
+          "tighten monetary policy",
+          "curb persistent inflationary pressures"
+        ]
       },
       {
         "id": 2,
         "vi": "Sự biến động của tỷ giá hối đoái đã tác động trực tiếp đến biên lợi nhuận của các doanh nghiệp xuất nhập khẩu.",
         "en": "Fluctuations in foreign exchange rates directly impacted the operating margins of import-export enterprises.",
-        "hints": ["Fluctuations in foreign exchange rates", "operating margins"]
+        "hints": [
+          "Fluctuations in foreign exchange rates",
+          "operating margins"
+        ]
       },
       {
         "id": 3,
         "vi": "Các nhà đầu tư tổ chức đang chủ động tái cơ cấu danh mục để phòng ngừa rủi ro suy thoái kinh tế toàn cầu.",
         "en": "Institutional investors are proactively reallocating portfolios to hedge against global recession risks.",
-        "hints": ["Institutional investors", "proactively reallocating portfolios", "hedge against"]
+        "hints": [
+          "Institutional investors",
+          "proactively reallocating portfolios",
+          "hedge against"
+        ]
       }
     ]
   }

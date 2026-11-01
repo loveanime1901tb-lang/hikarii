@@ -1,21 +1,22 @@
 @echo off
-title English Datpmt - Personal Edition
-chcp 65001 >nul
-echo =======================================================
-echo   ENGLISH DATPMT - PHIÊN BẢN HỌC CÁ NHÂN (AI POWERED)
-echo =======================================================
-echo.
-echo Đang kiểm tra thư viện...
-if not exist node_modules (
-    echo Đang cài đặt thư viện cần thiết...
-    call npm.cmd install
-)
-
-echo.
-echo Đang khởi động Server tại http://localhost:3000...
-echo Trình duyệt sẽ tự động mở sau 2 giây...
-timeout /t 2 /nobreak >nul
-start http://localhost:3000
-
+title hikarii - English Corner
+cd /d "%~dp0"
+where node >nul 2>nul
+if errorlevel 1 goto missing_node
+if exist node_modules goto run_app
+call npm.cmd install
+if errorlevel 1 goto install_error
+:run_app
+echo Open http://localhost:3000 in your browser.
+start "" "http://localhost:3000"
 node server.js
 pause
+exit /b
+:missing_node
+echo Please install Node.js 20 or newer, then try again.
+pause
+exit /b 1
+:install_error
+echo Could not install dependencies. Check your connection and try again.
+pause
+exit /b 1
