@@ -108,7 +108,7 @@ export class AiService {
   }
 
   // Evaluate translation
-  async evaluateTranslation({ vietnamese, englishUser, referenceEn }) {
+  async evaluateTranslation({ vietnamese, englishUser, referenceEn, learnerName = '' }) {
     const res = await fetch('/api/gemini/evaluate', {
       method: 'POST',
       signal: AbortSignal.timeout(65000),
@@ -117,6 +117,7 @@ export class AiService {
         vietnamese,
         englishUser,
         referenceEn,
+        learnerName,
         model: this.selectedModel,
         apiKey: this.apiKey
       })
@@ -127,7 +128,7 @@ export class AiService {
   }
 
   // Generate custom lesson
-  async generateLesson({ topic, level = 'intermediate', count = 5 }) {
+  async generateLesson({ topic, level = 'intermediate', count = 5, learnerName = '' }) {
     const res = await fetch('/api/gemini/generate-lesson', {
       method: 'POST',
       signal: AbortSignal.timeout(65000),
@@ -136,6 +137,7 @@ export class AiService {
         topic,
         level,
         count,
+        learnerName,
         model: this.selectedModel,
         apiKey: this.apiKey
       })

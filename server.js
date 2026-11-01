@@ -1,3 +1,4 @@
+import {learnerPrompt} from './public/js/personalization.js';
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs/promises';
@@ -343,7 +344,7 @@ app.post('/api/gemini/test', async (req, res) => {
 
 // 7. Evaluate Writing Translation with Gemini (or Fallback Local Engine)
 app.post('/api/gemini/evaluate', async (req, res) => {
-  const { vietnamese, englishUser, referenceEn, model, apiKey } = req.body;
+  const { vietnamese, englishUser, referenceEn, model, apiKey, learnerName } = req.body;
   const effectiveApiKey = await getEffectiveApiKey(apiKey);
   const effectiveModel = await getEffectiveModel(model);
 
@@ -357,6 +358,8 @@ app.post('/api/gemini/evaluate', async (req, res) => {
       const evaluationPrompt = `
 Bạn là chuyên gia giảng dạy tiếng Anh bản ngữ chuyên nghiệp, chấm bài dịch song ngữ Việt - Anh.
 Nhiệm vụ của bạn là đánh giá bản dịch tiếng Anh của người học dựa trên câu gốc tiếng Việt và câu tham khảo chuẩn.
+
+${learnerPrompt(learnerName, 'evaluate')}
 
 Câu gốc tiếng Việt: "${vietnamese}"
 Câu chuẩn tham khảo: "${referenceEn || ''}"
@@ -407,7 +410,7 @@ Chỉ trả về định dạng JSON hợp lệ, không bọc trong markdown cod
   }
 
   // Fallback: Local rule-based intelligent similarity check
-  const normalize = (t) => t.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().split(/\s+/).filter(Boolean);
+  const normalize = (t) => t.normalize('NFC').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, '').trim().split(/\s+/).filter(Boolean);
   const userWords = normalize(englishUser);
   const refWords = normalize(referenceEn || '');
 
@@ -449,7 +452,7 @@ Chỉ trả về định dạng JSON hợp lệ, không bọc trong markdown cod
 
 // 8. Generate Custom Lesson using Gemini
 app.post('/api/gemini/generate-lesson', async (req, res) => {
-  const { topic, level = 'intermediate', count = 5, apiKey, model } = req.body;
+  const { topic, level = 'intermediate', count = 5, apiKey, model, learnerName } = req.body;
   const effectiveApiKey = await getEffectiveApiKey(apiKey);
   const effectiveModel = await getEffectiveModel(model);
 
@@ -459,6 +462,7 @@ app.post('/api/gemini/generate-lesson', async (req, res) => {
 
   const prompt = `
 Bạn là giáo viên biên soạn giáo trình tiếng Anh. Hãy tạo một bài tập luyện viết dịch câu song ngữ theo chủ đề: "${topic}".
+${learnerPrompt(learnerName, 'generate')}
 Cấp độ: ${level} (Beginner / Intermediate / Advanced).
 Số lượng câu: ${count} câu nối tiếp nhau tạo thành một đoạn văn hoặc bài viết hoàn chỉnh.
 

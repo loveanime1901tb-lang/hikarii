@@ -149,6 +149,15 @@
           "make new friends"
         ],
         "explanation": "Want + to + động từ nguyên mẫu. Make friends có nghĩa là kết bạn."
+      },
+      {
+        "id": 5,
+        "vi": "Xin chào, mình tên là {{learnerName}}.",
+        "en": "Hello, my name is {{learnerName}}.",
+        "hints": [
+          "My name is {{learnerName}}"
+        ],
+        "explanation": "My name is + tên riêng dùng để tự giới thiệu. Giữ nguyên tên và dấu tiếng Việt của bạn."
       }
     ]
   },
@@ -248,8 +257,8 @@
     "sentences": [
       {
         "id": 1,
-        "vi": "Xin chào, tôi muốn làm thủ tục nhận phòng theo tên Nguyễn Văn A.",
-        "en": "Hello, I would like to check in under the name of Nguyen Van A.",
+        "vi": "Xin chào, tôi muốn làm thủ tục nhận phòng theo tên {{learnerName}}.",
+        "en": "Hello, I would like to check in under the name of {{learnerName}}.",
         "hints": [
           "would like to check in",
           "under the name of"

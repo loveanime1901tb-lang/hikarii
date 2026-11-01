@@ -49,3 +49,25 @@ Không đưa `data/config.json` lên kho mã nguồn công khai. Khi triển kha
 ## Kiểm tra
 
 `npm test` kiểm tra link YouTube, chuỗi ngày học, escape nội dung và tính hợp lệ của dữ liệu bài học. Kiểm tra giao diện bằng Chromium được ghi trong `KIEM_TRA.md`.
+
+## Cập nhật: nhập tên trong lời chào
+
+Lời chào có ô **Bạn tên là gì?**. Nhập tên hoặc biệt danh rồi bấm Bắt đầu (hoặc Enter). Tên đồng bộ ngay với Hồ sơ và lời chào trang chủ, được lưu trên trình duyệt. Để trống sẽ giữ nguyên tên đang có; người mới vẫn có thể học mà chưa nhập tên. Mở lại từ Cài đặt → Xem lại lời chào. Tên hồ sơ được gửi kèm yêu cầu tạo bài và chấm bài Gemini để cá nhân hóa câu nói về chính người học.
+
+Nếu cập nhật từ bản 2.0 trên GitHub, chỉ cần thay `public/index.html` và `public/js/app.js`, rồi để Render triển khai commit mới. Biến `GEMINI_API_KEY` trên Render tiếp tục dùng như trước.
+
+## Cập nhật: tên trong API và bài học
+
+Tên nhập ở lời chào hoặc Hồ sơ được gửi qua trường `learnerName` tới cả API tạo bài và chấm bài. Máy chủ đưa tên vào ngữ cảnh Gemini, yêu cầu dùng tên đó khi tự giới thiệu và giữ đúng tên nhân vật khác. Câu sửa/nhận xét cũng được yêu cầu giữ tên người học, kể cả tên có dấu tiếng Việt.
+
+Bài AI mới được hướng dẫn dùng `{{learnerName}}` ở vị trí cần tên của chính người học; ứng dụng điền tên hiện tại khi mở bài. Bài “Làm quen ở câu lạc bộ” có câu cuối “Xin chào, mình tên là ...”; bài nhận phòng cũng dùng tên của bạn. Những tên cố định trong bài AI đã lưu từ trước không tự bị thay thế; hãy tạo lại bài nếu muốn có tên cá nhân. Khi chưa nhập tên, vị trí tên mẫu hiển thị Alex.
+
+Cập nhật GitHub: thay đủ 6 file bên dưới, rồi triển khai lại trên Render:
+- `server.js`
+- `public/index.html`
+- `public/js/app.js`
+- `public/js/ai_service.js`
+- `public/js/personalization.js` (file mới, cần tải lên)
+- `data/lessons_sentence.json`
+
+Key trên Render vẫn đặt ở `GEMINI_API_KEY`. Không đưa `data/config.json` chứa key lên GitHub.

@@ -14,3 +14,11 @@
 - Không sử dụng API key cá nhân để gọi Gemini trả phí: kiểm tra giao diện chấm AI/tạo bài dùng phản hồi mô phỏng; API đối chiếu cục bộ đã kiểm tra thật.
 - Đã kiểm tra tạo iframe và giữ trình phát YouTube, chưa xác minh phát âm thanh trực tiếp từ YouTube trong môi trường này. Quyền nhúng và phát nền do YouTube/trình duyệt quyết định.
 - Chưa chạy Windows `.bat`, dịch vụ public tunnel hoặc triển khai lên máy chủ công khai. Script Windows và tunnel được cung cấp để chạy tại máy của bạn.
+
+## Cập nhật lời chào nhập tên
+
+Đã kiểm tra Chromium 390 × 844: nhập và gửi bằng Enter, tên hiện trên trang chủ và hồ sơ, giữ sau khi tải lại, bỏ trống không xóa tên cũ, ẩn/mở lại lời chào từ Cài đặt, tên có ký tự HTML hiển thị như văn bản. Không có lỗi JavaScript trong luồng thử nghiệm.
+
+## Cập nhật tên trong API
+
+8 kiểm tra Node đều đạt; bổ sung kiểm tra chuẩn hóa tên, điền tên không thay nhân vật khác, nội dung ngữ cảnh Gemini và learnerName trong cả hai request. Chromium kiểm tra tên nhập ở lời chào đi qua API tạo bài, hiện trong đề song ngữ, gửi tiếp cùng đáp án mẫu tới API chấm; đổi sang tên có dấu hoạt động trong bài có sẵn. Phản hồi Gemini trong bài kiểm tra trình duyệt được mô phỏng, chưa gọi Gemini thật.
