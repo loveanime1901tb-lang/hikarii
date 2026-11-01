@@ -1,0 +1,269 @@
+[
+  {
+    "id": "write-1",
+    "title": "Weekend Plan for a Fun Outdoor Trip",
+    "level": "beginner",
+    "category": "email",
+    "description": "An email inviting a friend to a weekend camping trip.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Chào Tom, cuối tuần này cậu có kế hoạch gì chưa?",
+        "en": "Hi Tom, do you have any plans for this weekend?",
+        "hints": ["do you have any plans", "for this weekend"]
+      },
+      {
+        "id": 2,
+        "vi": "Thời tiết được dự báo sẽ rất đẹp và nhiều nắng.",
+        "en": "The weather is forecast to be very nice and sunny.",
+        "hints": ["forecast", "nice and sunny"]
+      },
+      {
+        "id": 3,
+        "vi": "Một vài người bạn và mình đang lên kế hoạch đi cắm trại ở Ba Vì.",
+        "en": "A few friends and I are planning to go camping in Ba Vi.",
+        "hints": ["planning to go camping", "A few friends and I"]
+      },
+      {
+        "id": 4,
+        "vi": "Chúng mình sẽ rời đi vào sáng thứ Bảy và trở về vào chiều Chủ Nhật.",
+        "en": "We will leave on Saturday morning and return on Sunday afternoon.",
+        "hints": ["leave on Saturday morning", "return on Sunday afternoon"]
+      },
+      {
+        "id": 5,
+        "vi": "Cậu có muốn tham gia cùng bọn mình không? Báo cho mình biết sớm nhé!",
+        "en": "Would you like to join us? Let me know soon!",
+        "hints": ["Would you like to join us", "Let me know soon"]
+      }
+    ]
+  },
+  {
+    "id": "write-2",
+    "title": "My First Day at the New Job",
+    "level": "beginner",
+    "category": "diary",
+    "description": "A personal reflection about starting a new job.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Hôm nay là ngày đầu tiên tôi làm việc tại công ty mới.",
+        "en": "Today was my first day working at the new company.",
+        "hints": ["first day working", "at the new company"]
+      },
+      {
+        "id": 2,
+        "vi": "Sáng nay tôi cảm thấy khá lo lắng khi bước vào văn phòng.",
+        "en": "This morning I felt quite nervous when walking into the office.",
+        "hints": ["felt quite nervous", "walking into"]
+      },
+      {
+        "id": 3,
+        "vi": "Tuy nhiên, các đồng nghiệp mới đều rất thân thiện và nhiệt tình giúp đỡ.",
+        "en": "However, my new colleagues were all very friendly and helpful.",
+        "hints": ["colleagues", "friendly and helpful"]
+      },
+      {
+        "id": 4,
+        "vi": "Quản lý đã giới thiệu tôi với cả đội và hướng dẫn tôi các công việc cơ bản.",
+        "en": "The manager introduced me to the whole team and guided me through basic tasks.",
+        "hints": ["introduced me to", "guided me through"]
+      },
+      {
+        "id": 5,
+        "vi": "Tôi tin rằng đây sẽ là một khởi đầu tuyệt vời cho sự nghiệp của mình.",
+        "en": "I believe this will be a great start for my career.",
+        "hints": ["great start", "for my career"]
+      }
+    ]
+  },
+  {
+    "id": "write-3",
+    "title": "The Impact of Remote Work on Productivity",
+    "level": "intermediate",
+    "category": "essay",
+    "description": "An argumentative essay on how remote work reshapes productivity.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Trong những năm gần đây, làm việc từ xa đã trở thành một xu hướng phổ biến trên toàn cầu.",
+        "en": "In recent years, remote work has become a widespread trend globally.",
+        "hints": ["remote work", "widespread trend", "globally"]
+      },
+      {
+        "id": 2,
+        "vi": "Một trong những lợi ích lớn nhất là tiết kiệm thời gian di chuyển hàng ngày.",
+        "en": "One of the greatest benefits is saving daily commuting time.",
+        "hints": ["greatest benefits", "daily commuting time"]
+      },
+      {
+        "id": 3,
+        "vi": "Nhân viên có thể linh hoạt sắp xếp thời gian để cân bằng giữa công việc và cuộc sống.",
+        "en": "Employees can flexibly arrange their schedule to balance work and life.",
+        "hints": ["flexibly arrange", "balance work and life"]
+      },
+      {
+        "id": 4,
+        "vi": "Mặc dù vậy, sự thiếu hụt giao tiếp trực tiếp đôi khi gây khó khăn cho việc cộng tác nhóm.",
+        "en": "Nevertheless, the lack of face-to-face interaction sometimes creates challenges for team collaboration.",
+        "hints": ["lack of face-to-face interaction", "team collaboration"]
+      },
+      {
+        "id": 5,
+        "vi": "Tóm lại, một mô hình làm việc kết hợp có thể là giải pháp tối ưu cho hầu hết các doanh nghiệp.",
+        "en": "In conclusion, a hybrid working model could be the optimal solution for most businesses.",
+        "hints": ["In conclusion", "hybrid working model", "optimal solution"]
+      }
+    ]
+  },
+  {
+    "id": "write-4",
+    "title": "A Memorable Coffee Shop Encounter",
+    "level": "intermediate",
+    "category": "story",
+    "description": "A short narrative about meeting an old friend in a cozy coffee shop.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Trời đang mưa rào khi tôi bước vào một quán cà phê nhỏ ở góc phố.",
+        "en": "It was pouring rain when I stepped into a small coffee shop on the street corner.",
+        "hints": ["pouring rain", "stepped into", "street corner"]
+      },
+      {
+        "id": 2,
+        "vi": "Mùi cà phê rang xay thơm nồng lan tỏa khắp không gian ấm cúng.",
+        "en": "The rich aroma of roasted coffee filled the cozy space.",
+        "hints": ["rich aroma", "roasted coffee", "cozy space"]
+      },
+      {
+        "id": 3,
+        "vi": "Khi đang tìm một chỗ ngồi gần cửa sổ, tôi bất ngờ nhận ra một gương mặt quen thuộc.",
+        "en": "While looking for a seat near the window, I unexpectedly recognized a familiar face.",
+        "hints": ["unexpectedly recognized", "familiar face"]
+      },
+      {
+        "id": 4,
+        "vi": "Đó chính là người bạn thân thời đại học mà tôi đã không gặp suốt 5 năm.",
+        "en": "It was my close college friend whom I had not seen for five years.",
+        "hints": ["close college friend", "had not seen for five years"]
+      },
+      {
+        "id": 5,
+        "vi": "Chúng tôi đã dành cả buổi chiều để trò chuyện và ôn lại những kỷ niệm đẹp.",
+        "en": "We spent the entire afternoon chatting and reminiscing about wonderful memories.",
+        "hints": ["entire afternoon", "reminiscing about"]
+      }
+    ]
+  },
+  {
+    "id": "write-5",
+    "title": "Quarterly Digital Marketing Performance Analysis",
+    "level": "advanced",
+    "category": "report",
+    "description": "An executive summary analyzing quarterly marketing metrics and ROI.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Báo cáo này cung cấp đánh giá toàn diện về hiệu quả tiếp thị số trong quý vừa qua.",
+        "en": "This report provides a comprehensive evaluation of digital marketing performance over the past quarter.",
+        "hints": ["comprehensive evaluation", "digital marketing performance", "past quarter"]
+      },
+      {
+        "id": 2,
+        "vi": "Lưu lượng truy cập tự nhiên vào trang web đã tăng đáng kể 35% so với cùng kỳ năm ngoái.",
+        "en": "Organic website traffic increased substantially by 35% compared to the same period last year.",
+        "hints": ["Organic website traffic", "increased substantially", "same period last year"]
+      },
+      {
+        "id": 3,
+        "vi": "Chiến dịch quảng cáo trên mạng xã hội mang lại tỷ lệ chuyển đổi cao vượt ngoài mong đợi.",
+        "en": "The social media advertising campaign yielded a conversion rate that exceeded expectations.",
+        "hints": ["social media advertising campaign", "yielded a conversion rate", "exceeded expectations"]
+      },
+      {
+        "id": 4,
+        "vi": "Tuy nhiên, chi phí thu hút mỗi khách hàng mới vẫn cần được tối ưu hóa trong giai đoạn tiếp theo.",
+        "en": "However, customer acquisition cost still needs to be optimized in the upcoming phase.",
+        "hints": ["customer acquisition cost", "needs to be optimized", "upcoming phase"]
+      },
+      {
+        "id": 5,
+        "vi": "Chúng tôi khuyến nghị phân bổ thêm ngân sách cho các kênh nội dung có khả năng giữ chân người dùng cao.",
+        "en": "We recommend allocating additional budget to content channels with high user retention capabilities.",
+        "hints": ["allocating additional budget", "user retention capabilities"]
+      }
+    ]
+  },
+  {
+    "id": "write-6",
+    "title": "Navigating Artificial Intelligence in Healthcare",
+    "level": "advanced",
+    "category": "essay",
+    "description": "An argumentative essay exploring ethical and operational AI integration in clinical medicine.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Sự tích hợp trí tuệ nhân tạo vào y học lâm sàng đang định hình lại cách chẩn đoán bệnh tật.",
+        "en": "The integration of artificial intelligence into clinical medicine is reshaping how diseases are diagnosed.",
+        "hints": ["clinical medicine", "reshaping", "diagnosed"]
+      },
+      {
+        "id": 2,
+        "vi": "Các mô hình học máy có khả năng phân tích hình ảnh y khoa với độ chuẩn xác tương đương các chuyên gia đầu ngành.",
+        "en": "Machine learning models are capable of analyzing medical imaging with precision comparable to leading specialists.",
+        "hints": ["machine learning models", "precision comparable to", "leading specialists"]
+      },
+      {
+        "id": 3,
+        "vi": "Mặc dù vậy, các khuôn khổ đạo đức và quyền riêng tư của bệnh nhân vẫn là những rào cản cần được giải quyết thấu đáo.",
+        "en": "Nevertheless, ethical frameworks and patient data privacy remain pivotal challenges that must be rigorously addressed.",
+        "hints": ["ethical frameworks", "patient data privacy", "rigorously addressed"]
+      },
+      {
+        "id": 4,
+        "vi": "Các nhà lập pháp đang nỗ lực thiết lập các tiêu chuẩn minh bạch cho thuật toán trước khi cấp phép rộng rãi.",
+        "en": "Policymakers are striving to establish algorithmic transparency standards prior to widespread clinical deployment.",
+        "hints": ["Policymakers", "algorithmic transparency", "widespread clinical deployment"]
+      },
+      {
+        "id": 5,
+        "vi": "Sự cộng tác hài hòa giữa bác sĩ và AI hứa hẹn sẽ tối ưu hóa kết quả điều trị cho hàng triệu bệnh nhân.",
+        "en": "A harmonious collaboration between clinicians and AI holds immense promise for optimizing therapeutic outcomes for millions of patients.",
+        "hints": ["harmonious collaboration", "holds immense promise", "therapeutic outcomes"]
+      }
+    ]
+  },
+  {
+    "id": "write-7",
+    "title": "Sustainable Urban Architecture and Climate Adaptation",
+    "level": "advanced",
+    "category": "article",
+    "description": "An architectural perspective on eco-friendly city planning and sustainable infrastructure.",
+    "sentences": [
+      {
+        "id": 1,
+        "vi": "Quy hoạch đô thị hiện đại đòi hỏi một sự chuyển dịch căn bản hướng tới cơ sở hạ tầng bền vững với môi trường.",
+        "en": "Contemporary urban planning necessitates a fundamental transition toward environmentally sustainable infrastructure.",
+        "hints": ["Contemporary urban planning", "necessitates", "fundamental transition"]
+      },
+      {
+        "id": 2,
+        "vi": "Các kiến trúc sư đang tận dụng vật liệu tái chế cùng hệ thống năng lượng tái tạo thụ động để giảm thiểu lượng phát thải.",
+        "en": "Architects are leveraging recycled materials and passive renewable energy systems to minimize carbon emissions.",
+        "hints": ["leveraging", "passive renewable energy", "minimize carbon emissions"]
+      },
+      {
+        "id": 3,
+        "vi": "Không gian xanh thẳng đứng không chỉ thanh lọc không khí mà còn làm dịu hiệu ứng đảo nhiệt đô thị đáng kể.",
+        "en": "Vertical green spaces not only purify urban air but also substantially mitigate the urban heat island effect.",
+        "hints": ["Vertical green spaces", "purify urban air", "mitigate the urban heat island effect"]
+      },
+      {
+        "id": 4,
+        "vi": "Việc ưu tiên mạng lưới giao thông công cộng không phát thải là chìa khóa xây dựng các đại đô thị đáng sống.",
+        "en": "Prioritizing zero-emission public transit networks is quintessential to fostering genuinely livable metropolises.",
+        "hints": ["zero-emission public transit", "quintessential", "livable metropolises"]
+      }
+    ]
+  }
+]

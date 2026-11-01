@@ -1,0 +1,194 @@
+[
+  {
+    "id": "conv-1",
+    "title": "Ordering Coffee and Pastries at a Café",
+    "level": "beginner",
+    "description": "Conversation between a customer and a barista.",
+    "dialogues": [
+      {
+        "speaker": "Barista",
+        "role": "system",
+        "en": "Good morning! Welcome to Star Coffee. What can I get started for you today?",
+        "vi": "Chào buổi sáng! Chào mừng bạn đến với Star Coffee. Hôm nay tôi có thể lấy gì cho bạn?"
+      },
+      {
+        "speaker": "Customer (You)",
+        "role": "user",
+        "vi": "Chào bạn, cho tôi một ly cà phê sữa đá lớn và một chiếc bánh sừng bò nhé.",
+        "en": "Hi, I would like a large iced coffee with milk and a croissant, please.",
+        "hints": ["large iced coffee with milk", "a croissant, please"]
+      },
+      {
+        "speaker": "Barista",
+        "role": "system",
+        "en": "Sure thing! Would you like whole milk or oat milk with that?",
+        "vi": "Chắc chắn rồi! Bạn muốn dùng sữa tươi nguyên kem hay sữa yến mạch ạ?"
+      },
+      {
+        "speaker": "Customer (You)",
+        "role": "user",
+        "vi": "Cho tôi sữa yến mạch nhé, và ít đường thôi.",
+        "en": "Oat milk, please, and less sugar.",
+        "hints": ["Oat milk, please", "less sugar"]
+      },
+      {
+        "speaker": "Barista",
+        "role": "system",
+        "en": "Got it. That will be five dollars and fifty cents. Will you be paying with cash or card?",
+        "vi": "Tôi hiểu rồi. Của bạn hết 5 đô la 50 xu. Bạn thanh toán bằng tiền mặt hay thẻ?"
+      },
+      {
+        "speaker": "Customer (You)",
+        "role": "user",
+        "vi": "Tôi sẽ thanh toán bằng thẻ tín dụng. Cảm ơn bạn!",
+        "en": "I will pay with a credit card. Thank you!",
+        "hints": ["pay with a credit card", "Thank you"]
+      }
+    ]
+  },
+  {
+    "id": "conv-2",
+    "title": "Discussing Project Deadlines with a Colleague",
+    "level": "intermediate",
+    "description": "Professional discussion between two co-workers regarding a software sprint.",
+    "dialogues": [
+      {
+        "speaker": "Sarah",
+        "role": "system",
+        "en": "Hey, do you have a quick moment to talk about the upcoming release next Friday?",
+        "vi": "Này, cậu có một chút thời gian để nói về đợt phát hành sắp tới vào thứ Sáu tuần sau không?"
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Được chứ, mình vừa hoàn thành xong việc kiểm thử các tính năng mới.",
+        "en": "Sure, I have just finished testing the new features.",
+        "hints": ["Sure, I have just finished", "testing the new features"]
+      },
+      {
+        "speaker": "Sarah",
+        "role": "system",
+        "en": "Awesome! Are there any critical bugs blocking the deployment?",
+        "vi": "Tuyệt vời! Có lỗi nghiêm trọng nào cản trở việc triển khai không?"
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "May mắn là mọi thứ đang hoạt động ổn định và không có lỗi nghiêm trọng nào.",
+        "en": "Fortunately, everything is running smoothly and there are no critical bugs.",
+        "hints": ["Fortunately", "running smoothly", "no critical bugs"]
+      }
+    ]
+  },
+  {
+    "id": "conv-3",
+    "title": "Negotiating Strategic Partnership & Terms",
+    "level": "advanced",
+    "description": "High-level business discussion discussing intellectual property and revenue sharing.",
+    "dialogues": [
+      {
+        "speaker": "Director Michael",
+        "role": "system",
+        "en": "We appreciate your proposal. However, our board expressed reservations regarding the proposed revenue share percentage.",
+        "vi": "Chúng tôi đánh giá cao đề xuất của bạn. Tuy nhiên, ban giám đốc bày tỏ sự e ngại về tỷ lệ phân chia doanh thu được đề xuất."
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Tôi hoàn toàn hiểu mối bận tâm của ông, và chúng tôi sẵn sàng đàm phán một cấu trúc linh hoạt hơn.",
+        "en": "I completely understand your concern, and we are willing to negotiate a more flexible structure.",
+        "hints": ["completely understand your concern", "willing to negotiate", "flexible structure"]
+      },
+      {
+        "speaker": "Director Michael",
+        "role": "system",
+        "en": "That sounds constructive. Would your team be amenable to a tiered commission model based on milestones?",
+        "vi": "Nghe rất mang tính xây dựng. Đội ngũ của bạn có chấp thuận mô hình hoa hồng theo bậc thang dựa trên các mốc tiến độ không?"
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Điều đó nghe có vẻ hợp lý và đảm bảo lợi ích chung cho cả hai bên.",
+        "en": "That sounds reasonable and ensures mutual benefits for both parties.",
+        "hints": ["sounds reasonable", "ensures mutual benefits", "for both parties"]
+      }
+    ]
+  },
+  {
+    "id": "conv-4",
+    "title": "Asking for Directions in the City Center",
+    "level": "beginner",
+    "category": "travel",
+    "description": "Essential navigational dialogue asking a local for directions to the central subway station.",
+    "dialogues": [
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Xin lỗi làm phiền, bạn có thể chỉ giúp tôi đường đến ga tàu điện ngầm gần nhất không?",
+        "en": "Excuse me, could you please tell me how to get to the nearest subway station?",
+        "hints": ["Excuse me", "could you please tell me", "nearest subway station"]
+      },
+      {
+        "speaker": "Local Citizen",
+        "role": "system",
+        "en": "Sure thing! Walk straight down this street for two blocks, then turn left at the bookstore.",
+        "vi": "Chắc chắn rồi! Cứ đi thẳng đường này qua hai ngã tư, sau đó rẽ trái ở hiệu sách nhé."
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Đi bộ đến đó mất khoảng bao lâu vậy bạn?",
+        "en": "How long does it take to walk there?",
+        "hints": ["How long does it take", "to walk there"]
+      },
+      {
+        "speaker": "Local Citizen",
+        "role": "system",
+        "en": "It takes about five minutes. You can't miss the blue subway entrance sign.",
+        "vi": "Mất khoảng 5 phút thôi. Bạn sẽ thấy ngay biển hiệu lối vào tàu điện màu xanh."
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Cảm ơn bạn rất nhiều vì sự giúp đỡ nhiệt tình!",
+        "en": "Thank you so much for your kind help!",
+        "hints": ["Thank you so much", "kind help"]
+      }
+    ]
+  },
+  {
+    "id": "conv-5",
+    "title": "Technical Software Engineering Job Interview",
+    "level": "intermediate",
+    "category": "work",
+    "description": "A job interview dialogue discussing cloud architecture, scalability, and code optimization.",
+    "dialogues": [
+      {
+        "speaker": "Interviewer",
+        "role": "system",
+        "en": "Could you walk us through how you would optimize an API endpoint experiencing high latency under heavy load?",
+        "vi": "Bạn có thể chia sẻ cách bạn tối ưu hóa một API endpoint đang bị trễ cao khi chịu tải nặng không?"
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Đầu tiên, tôi sẽ kiểm tra truy vấn cơ sở dữ liệu và thêm cơ chế lưu bộ nhớ đệm với Redis.",
+        "en": "First, I would examine database query performance and implement caching mechanisms using Redis.",
+        "hints": ["examine database query performance", "implement caching mechanisms", "using Redis"]
+      },
+      {
+        "speaker": "Interviewer",
+        "role": "system",
+        "en": "Excellent. And how do you ensure cache invalidation remains consistent across microservices?",
+        "vi": "Tuyệt vời. Và bạn đảm bảo tính nhất quán khi vô hiệu hóa cache giữa các microservices như thế nào?"
+      },
+      {
+        "speaker": "You",
+        "role": "user",
+        "vi": "Chúng tôi áp dụng kiến trúc hướng sự kiện với tin nhắn Kafka để đồng bộ việc xóa cache.",
+        "en": "We apply an event-driven architecture using Kafka messages to synchronize cache eviction across services.",
+        "hints": ["event-driven architecture", "Kafka messages", "synchronize cache eviction"]
+      }
+    ]
+  }
+]

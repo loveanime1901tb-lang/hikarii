@@ -1,0 +1,11 @@
+{
+  "apiKey": "",
+  "selectedModel": "gemini-flash-lite-latest",
+  "dailyGoal": 10,
+  "stats": {
+    "totalXp": 120,
+    "completedExercises": 5,
+    "streakDays": 3,
+    "lastPracticeDate": "2026-11-01"
+  }
+}

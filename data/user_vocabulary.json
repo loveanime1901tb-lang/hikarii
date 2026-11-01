@@ -1,0 +1,24 @@
+[
+  {
+    "id": "v1",
+    "word": "reminisce",
+    "ipa": "/ˌrem.ɪˈnɪs/",
+    "meaning": "hồi tưởng, nhớ lại những kỷ niệm đẹp trong quá khứ",
+    "type": "verb",
+    "example": "We spent the entire afternoon reminiscing about our college days.",
+    "status": "new_word",
+    "reviewCount": 1,
+    "lastReviewed": "2026-11-01"
+  },
+  {
+    "id": "v2",
+    "word": "substantially",
+    "ipa": "/səbˈstæn.ʃəl.i/",
+    "meaning": "đáng kể, về căn bản",
+    "type": "adverb",
+    "example": "Traffic increased substantially this quarter.",
+    "status": "new_word",
+    "reviewCount": 0,
+    "lastReviewed": "2026-11-01"
+  }
+]
