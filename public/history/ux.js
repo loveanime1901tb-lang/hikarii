@@ -1,0 +1,42 @@
+'use strict';
+let fontLevel=Math.max(-2,Math.min(5,Number(read('hikarii_history_font',0))||0));
+function applyFont(){document.getElementById('history').style.setProperty('--reading-size',(17+fontLevel*2)+'px');document.querySelectorAll('[data-font-level]').forEach(el=>{el.textContent=Math.round((17+fontLevel*2)/17*100)+'%';});document.querySelectorAll('[data-action="font-minus"]').forEach(el=>el.disabled=fontLevel<=-2);document.querySelectorAll('[data-action="font-plus"]').forEach(el=>el.disabled=fontLevel>=5);}
+function changeFont(action){fontLevel=action==='font-reset'?0:Math.max(-2,Math.min(5,fontLevel+(action==='font-minus'?-1:1)));save('hikarii_history_font',fontLevel);applyFont();}
+function fontControls(){return '<div class="hk-font" aria-label="Cỡ chữ câu hỏi và đáp án">'+btn('A−','font-minus')+'<span data-font-level>'+Math.round((17+fontLevel*2)/17*100)+'%</span>'+btn('A+','font-plus')+btn('Mặc định','font-reset')+'</div>';}
+function updateLearner(){const el=$('#learner-profile');if(!el)return;const p=read('hikarii_profile',{}),name=String(p.name||'Người bạn mới').slice(0,32);el.textContent='';const avatar=document.createElement('span');avatar.className='hk-avatar';if(typeof p.avatar==='string'&&/^data:image\/(jpeg|png|webp);base64,/.test(p.avatar)){const image=new Image();image.src=p.avatar;image.alt='';avatar.appendChild(image);}else avatar.textContent=name.slice(0,1).toUpperCase();el.appendChild(avatar);const label=document.createElement('span');label.textContent=name;el.appendChild(label);}
+function matchesCategory(e){return (categoryFilter==='all'||(e.category||'thpt')===categoryFilter)&&(!topicFilter||(e.topic||'').toLowerCase().includes(topicFilter.toLowerCase()));}
+function reviewOptions(q){
+ if(q.type==='mc')return (q.chosen===null||q.chosen===undefined?'<div class="hk-unanswered" role="status"><strong>— Câu này bạn chưa chọn đáp án</strong><br>Không được tính điểm. Dấu ✓ xanh bên dưới chỉ đáp án đúng.</div>':'')+q.options.map((o,j)=>{const correct=q.answer===j,wrong=q.chosen===j&&!correct;
+ return '<div class="hk-review-option '+(correct?'hk-correct':wrong?'hk-incorrect':'')+'"><span class="hk-review-text">'+String.fromCharCode(65+j)+'. '+esc(o)+'</span>'+(correct?'<span class="hk-mark" role="img" aria-label="Đáp án đúng">✓</span>':wrong?'<span class="hk-mark" role="img" aria-label="Đáp án đã chọn sai">✕</span>':'')+'</div>';}).join('');
+ return q.options.map((o,j)=>{const chosen=Array.isArray(q.chosen)?q.chosen[j]:null,blank=typeof chosen!=='boolean',correct=chosen===q.answer[j];
+ return '<div class="hk-tf-review '+(blank?'hk-unanswered-item':'')+'"><p class="hk-review-text">'+String.fromCharCode(97+j)+'. '+esc(o)+'</p><div class="hk-pills"><span class="hk-answer-tag '+(blank?'hk-blank':correct?'hk-correct':'hk-incorrect')+'">'+(blank?'— Bạn chưa chọn ý này':(correct?'✓':'✕')+' Bạn chọn: '+(chosen?'Đúng':'Sai'))+'</span><span class="hk-answer-tag hk-correct">✓ Đáp án: '+(q.answer[j]?'Đúng':'Sai')+'</span></div></div>';}).join('');
+}
+function showStorage(){
+ ++pageVersion;clearInterval(timer);attempt=null;result=null;
+ const mb=(JSON.stringify(db).length*2/1048576).toFixed(2);
+ view.innerHTML='<h1>Dữ liệu trên thiết bị</h1><p>Khoảng '+mb+' MB dữ liệu Lịch sử (ước tính). Dung lượng còn trống phụ thuộc trình duyệt và dữ liệu Tiếng Anh.</p><p>Không tự xóa điểm hoặc bài đang làm. Hãy tải bản sao trước khi dọn dữ liệu.</p><div class="hk-pills">'+btn('Sao lưu kết quả','export')+btn('Danh sách đề','list')+'<button id="clear-chat" class="hk-button">Xóa chat AI đã lưu</button></div><h2>Lịch sử bài đã nộp</h2><label><input type="checkbox" id="storage-all"> Chọn tất cả lịch sử</label><div>'+db.attempts.map((r,i)=>'<label class="hk-storage-row"><input type="checkbox" data-delete-attempt="'+i+'"> '+esc(r.title)+' · '+r.score+'/10 · '+new Date(r.date).toLocaleString('vi-VN')+'</label>').join('')+'</div><button id="delete-records" class="hk-button">Xóa lịch sử đã chọn</button><h2>Bài đang làm dở</h2>'+Object.keys(db.drafts).map(id=>'<label class="hk-storage-row"><input type="checkbox" data-delete-draft="'+esc(id)+'"> '+esc(db.drafts[id].exam.title)+'</label>').join('')+'<button id="delete-drafts" class="hk-button">Xóa bài dở đã chọn</button>';
+ const commit=next=>{if(save('hikarii_history_v1',next)){db=next;unsaved=false;storageNotice(false);showStorage();}};
+ $('#storage-all').onchange=e=>document.querySelectorAll('[data-delete-attempt]').forEach(el=>el.checked=e.target.checked);
+ $('#clear-chat').onclick=()=>{if(!confirm('Xóa hội thoại và nhận xét AI đã lưu? Điểm, đáp án và lời giải có sẵn được giữ.'))return;const next=JSON.parse(JSON.stringify(db));next.attempts.forEach(r=>{delete r.ai;delete r.chats;});commit(next);};
+ $('#delete-records').onclick=()=>{const indices=Array.from(document.querySelectorAll('[data-delete-attempt]:checked')).map(el=>Number(el.dataset.deleteAttempt));if(!indices.length)return;if(!confirm('Xóa '+indices.length+' lượt làm đã chọn? Chỉ khôi phục được nếu bạn đã tải bản sao.'))return;commit(Object.assign({},db,{attempts:db.attempts.filter((r,i)=>!indices.includes(i))}));};
+ $('#delete-drafts').onclick=()=>{const ids=Array.from(document.querySelectorAll('[data-delete-draft]:checked')).map(el=>el.dataset.deleteDraft);if(!ids.length||!confirm('Xóa '+ids.length+' bài đang làm dở đã chọn?'))return;const next=JSON.parse(JSON.stringify(db));ids.forEach(id=>delete next.drafts[id]);commit(next);};
+}
+applyFont();updateLearner();window.addEventListener('storage',e=>{if(e.key==='hikarii_profile')updateLearner();if(e.key==='hikarii_theme')theme();});window.addEventListener('pageshow',updateLearner);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateLearner();});
+function validBackup(d){
+ const question=q=>q&&['mc','tf'].includes(q.type)&&Number.isInteger(q.number)&&typeof q.text==='string'&&Array.isArray(q.options)&&q.options.length===4&&q.options.every(v=>typeof v==='string');
+ const id=s=>typeof s==='string'&&/^[a-f0-9]{24}$/.test(s);
+ const answers=a=>Array.isArray(a)&&a.length===28&&a.every(v=>v===null||Number.isInteger(v)&&v>=0&&v<=3||Array.isArray(v)&&v.length===4&&v.every(x=>x===null||typeof x==='boolean'));
+ const keyed=q=>q.type==='mc'?Number.isInteger(q.answer)&&q.answer>=0&&q.answer<=3:Array.isArray(q.answer)&&q.answer.length===4&&q.answer.every(v=>typeof v==='boolean')&&Array.isArray(q.correct)&&q.correct.length===4;
+ return d&&d.version===1&&Array.isArray(d.attempts)&&d.drafts&&typeof d.drafts==='object'&&!Array.isArray(d.drafts)&&
+ d.attempts.every(r=>r&&id(r.id)&&typeof r.title==='string'&&typeof r.score==='number'&&isFinite(r.score)&&r.score>=0&&r.score<=10&&typeof r.date==='number'&&answers(r.answers)&&Array.isArray(r.review)&&r.review.length===28&&r.review.every(q=>question(q)&&keyed(q)))&&
+ Object.keys(d.drafts).every(k=>{const a=d.drafts[k];return id(k)&&a&&a.id===k&&typeof a.revision==='string'&&typeof a.start==='number'&&a.exam&&typeof a.exam.title==='string'&&Array.isArray(a.exam.questions)&&a.exam.questions.length===28&&a.exam.questions.every(question)&&answers(a.answers)&&Array.isArray(a.flags);});
+}
+
+function storageNotice(failed){
+ const notice=$('#save-warning');if(notice){notice.hidden=!failed;if(failed){notice.innerHTML='<strong>Chưa lưu được thay đổi mới nhất.</strong> Bộ nhớ trình duyệt đầy hoặc bị chặn. Hãy sao lưu trước khi rời trang. <button class="hk-button" id="save-emergency">Tải bản sao ngay</button>';$('#save-emergency').onclick=()=>download('hikarii-lich-su-backup.json',db);}}
+ const status=$('#save-status');if(status&&failed)status.textContent='Chưa lưu được — xem cảnh báo phía trên';
+}
+
+function paperControls(id){const base='/api/history/paper/'+encodeURIComponent(id);return '<section class="hk-paper-controls"><h3>Làm bài trên giấy</h3><p>Tải đề A4 để chỉnh sửa và in. Bản DOC dành cho ứng dụng Word cũ.</p><label>Phiên bản <select id="paper-version" class="hk-search"><option value="0">Không kèm đáp án</option><option value="1">Kèm đáp án</option></select></label><div class="hk-pills"><a class="hk-button" id="paper-download" href="'+base+'?answers=0&format=docx">Tải Word (.docx)</a><a class="hk-button" id="paper-doc" href="'+base+'?answers=0&format=doc">Tải Word cũ (.doc)</a></div></section>';}
+view.addEventListener('change',function(ev){if(ev.target.id!=='paper-version')return;const v=ev.target.value==='1'?'1':'0';['paper-download','paper-doc'].forEach(id=>{const a=document.getElementById(id);if(a)a.href=a.href.replace(/answers=[01]/,'answers='+v);});});

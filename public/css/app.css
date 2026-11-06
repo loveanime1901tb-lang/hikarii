@@ -4,3 +4,12 @@
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .form-row>div{min-width:0}.form-row>select{width:175px;flex:0 0 175px}.form-row>button{flex-shrink:0}.lesson-guide{align-self:start}
 @media(max-width:600px){.form-row>select{width:100%;flex:1 1 100%}.generator .form-row>div{flex-basis:100%}.goal-card{display:block}.goal-ring{width:110px;height:110px}.goal-ring>div{width:92px;height:92px}}
+
+/* Hikarii music multi-source and fullscreen controls */
+.music-panel iframe.music-spotify{height:152px;min-height:0;aspect-ratio:auto;}
+.music-panel iframe.music-spotify.tall{height:352px;min-height:0;aspect-ratio:auto;}
+.music-panel iframe.music-tiktok{height:min(480px,60vh);min-height:260px;aspect-ratio:9/16;}
+.music-panel #music-player audio{display:block;width:100%;margin-top:12px;}
+.music-panel #music-external{display:inline-block;margin-top:10px;overflow-wrap:anywhere;}
+.music-panel #music-external[hidden]{display:none;}
+#fullscreen-toggle{font-size:22px;line-height:1;}

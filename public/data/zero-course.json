@@ -1,0 +1,650 @@
+[
+  {
+    "id": "zero-01",
+    "title": "Chào hỏi",
+    "note": "Hello = xin chào; goodbye = tạm biệt; thank you = cảm ơn. Dùng cụm ngắn để bắt đầu, không cần dịch từng chữ.",
+    "sentences": [
+      {
+        "en": "Hello!",
+        "vi": "Xin chào!"
+      },
+      {
+        "en": "Good morning!",
+        "vi": "Chào buổi sáng!"
+      },
+      {
+        "en": "Goodbye!",
+        "vi": "Tạm biệt!"
+      },
+      {
+        "en": "Thank you!",
+        "vi": "Cảm ơn bạn!"
+      },
+      {
+        "en": "You are welcome.",
+        "vi": "Không có gì."
+      }
+    ]
+  },
+  {
+    "id": "zero-02",
+    "title": "Tôi và bạn",
+    "note": "I = tôi; you = bạn. Với I dùng am; với you dùng are. I am có thể viết ngắn thành I'm.",
+    "sentences": [
+      {
+        "en": "I am a student.",
+        "vi": "Tôi là học sinh."
+      },
+      {
+        "en": "You are a student.",
+        "vi": "Bạn là học sinh."
+      },
+      {
+        "en": "I am happy.",
+        "vi": "Tôi vui."
+      },
+      {
+        "en": "You are kind.",
+        "vi": "Bạn tốt bụng."
+      },
+      {
+        "en": "I am ready.",
+        "vi": "Tôi đã sẵn sàng."
+      }
+    ]
+  },
+  {
+    "id": "zero-03",
+    "title": "Giới thiệu tên",
+    "note": "My name is… = Tên tôi là…; your name = tên bạn. What dùng để hỏi “gì”. Linh và Nam là tên nhân vật ví dụ.",
+    "sentences": [
+      {
+        "en": "My name is Linh.",
+        "vi": "Tên tôi là Linh."
+      },
+      {
+        "en": "My name is Nam.",
+        "vi": "Tên tôi là Nam."
+      },
+      {
+        "en": "What is your name?",
+        "vi": "Bạn tên là gì?"
+      },
+      {
+        "en": "Nice to meet you.",
+        "vi": "Rất vui được gặp bạn."
+      },
+      {
+        "en": "This is my friend.",
+        "vi": "Đây là bạn của tôi."
+      }
+    ]
+  },
+  {
+    "id": "zero-04",
+    "title": "Cảm xúc",
+    "note": "happy = vui; sad = buồn; tired = mệt; hungry = đói; thirsty = khát. Đặt trạng thái sau I am.",
+    "sentences": [
+      {
+        "en": "I am tired.",
+        "vi": "Tôi mệt."
+      },
+      {
+        "en": "I am hungry.",
+        "vi": "Tôi đói."
+      },
+      {
+        "en": "I am thirsty.",
+        "vi": "Tôi khát."
+      },
+      {
+        "en": "I am sad.",
+        "vi": "Tôi buồn."
+      },
+      {
+        "en": "Are you happy?",
+        "vi": "Bạn có vui không?"
+      }
+    ]
+  },
+  {
+    "id": "zero-05",
+    "title": "Gia đình",
+    "note": "my = của tôi; mother = mẹ; father = bố; sister = chị/em gái; brother = anh/em trai. This is dùng giới thiệu một người.",
+    "sentences": [
+      {
+        "en": "This is my mother.",
+        "vi": "Đây là mẹ tôi."
+      },
+      {
+        "en": "This is my father.",
+        "vi": "Đây là bố tôi."
+      },
+      {
+        "en": "This is my sister.",
+        "vi": "Đây là chị gái tôi."
+      },
+      {
+        "en": "This is my brother.",
+        "vi": "Đây là anh trai tôi."
+      },
+      {
+        "en": "I love my family.",
+        "vi": "Tôi yêu gia đình mình."
+      }
+    ]
+  },
+  {
+    "id": "zero-06",
+    "title": "Đồ vật quanh mình",
+    "note": "a dùng trước danh từ số ít bắt đầu bằng âm phụ âm; an trước âm nguyên âm. Book = sách; pen = bút; bag = túi; apple = táo.",
+    "sentences": [
+      {
+        "en": "This is a book.",
+        "vi": "Đây là một quyển sách."
+      },
+      {
+        "en": "This is a pen.",
+        "vi": "Đây là một cây bút."
+      },
+      {
+        "en": "This is a bag.",
+        "vi": "Đây là một chiếc túi."
+      },
+      {
+        "en": "This is an apple.",
+        "vi": "Đây là một quả táo."
+      },
+      {
+        "en": "It is a pencil.",
+        "vi": "Nó là một chiếc bút chì."
+      }
+    ]
+  },
+  {
+    "id": "zero-07",
+    "title": "Màu sắc",
+    "note": "red = đỏ; blue = xanh dương; green = xanh lá; black = đen; white = trắng. Mẫu: The + đồ vật + is + màu.",
+    "sentences": [
+      {
+        "en": "The bag is red.",
+        "vi": "Chiếc túi màu đỏ."
+      },
+      {
+        "en": "The pen is blue.",
+        "vi": "Cây bút màu xanh dương."
+      },
+      {
+        "en": "The apple is green.",
+        "vi": "Quả táo màu xanh lá."
+      },
+      {
+        "en": "The cat is black.",
+        "vi": "Con mèo màu đen."
+      },
+      {
+        "en": "The shirt is white.",
+        "vi": "Chiếc áo sơ mi màu trắng."
+      }
+    ]
+  },
+  {
+    "id": "zero-08",
+    "title": "Đếm từ một đến năm",
+    "note": "one, two, three, four, five = một đến năm. Sau số lớn hơn một, các danh từ trong bài thêm s.",
+    "sentences": [
+      {
+        "en": "I have one book.",
+        "vi": "Tôi có một quyển sách."
+      },
+      {
+        "en": "I have two pens.",
+        "vi": "Tôi có hai cây bút."
+      },
+      {
+        "en": "I have three bags.",
+        "vi": "Tôi có ba chiếc túi."
+      },
+      {
+        "en": "I have four apples.",
+        "vi": "Tôi có bốn quả táo."
+      },
+      {
+        "en": "I have five pencils.",
+        "vi": "Tôi có năm chiếc bút chì."
+      }
+    ]
+  },
+  {
+    "id": "zero-09",
+    "title": "Tuổi và số lớn hơn",
+    "note": "six, seven, eight, nine, ten = sáu đến mười. Nói tuổi dùng am/is/are, không dịch thành “có tuổi”.",
+    "sentences": [
+      {
+        "en": "I am ten years old.",
+        "vi": "Tôi mười tuổi."
+      },
+      {
+        "en": "She is nine years old.",
+        "vi": "Cô bé chín tuổi."
+      },
+      {
+        "en": "He is eight years old.",
+        "vi": "Cậu bé tám tuổi."
+      },
+      {
+        "en": "I have six books.",
+        "vi": "Tôi có sáu quyển sách."
+      },
+      {
+        "en": "I have seven pens.",
+        "vi": "Tôi có bảy cây bút."
+      }
+    ]
+  },
+  {
+    "id": "zero-10",
+    "title": "Một và nhiều",
+    "note": "is đi với một người/vật; are đi với nhiều. These = những cái này. Các từ book, pen, bag trong bài thêm s khi số nhiều.",
+    "sentences": [
+      {
+        "en": "This is a book.",
+        "vi": "Đây là một quyển sách."
+      },
+      {
+        "en": "These are books.",
+        "vi": "Đây là những quyển sách."
+      },
+      {
+        "en": "These are pens.",
+        "vi": "Đây là những cây bút."
+      },
+      {
+        "en": "These are my bags.",
+        "vi": "Đây là những chiếc túi của tôi."
+      },
+      {
+        "en": "They are students.",
+        "vi": "Họ là học sinh."
+      }
+    ]
+  },
+  {
+    "id": "zero-11",
+    "title": "Vị trí đồ vật",
+    "note": "on = trên; in = trong; under = dưới; near = gần. The chỉ vật đã xác định trong tình huống.",
+    "sentences": [
+      {
+        "en": "The book is on the table.",
+        "vi": "Quyển sách ở trên bàn."
+      },
+      {
+        "en": "The pen is in the bag.",
+        "vi": "Cây bút ở trong túi."
+      },
+      {
+        "en": "The cat is under the chair.",
+        "vi": "Con mèo ở dưới ghế."
+      },
+      {
+        "en": "The school is near my house.",
+        "vi": "Trường ở gần nhà tôi."
+      },
+      {
+        "en": "Where is my bag?",
+        "vi": "Túi của tôi ở đâu?"
+      }
+    ]
+  },
+  {
+    "id": "zero-12",
+    "title": "Trong lớp học",
+    "note": "please giúp lời yêu cầu lịch sự hơn. Open = mở; close = đóng; listen = nghe; read = đọc; write = viết.",
+    "sentences": [
+      {
+        "en": "Open your book, please.",
+        "vi": "Hãy mở sách của bạn ra."
+      },
+      {
+        "en": "Close the door, please.",
+        "vi": "Hãy đóng cửa lại."
+      },
+      {
+        "en": "Listen to the teacher.",
+        "vi": "Hãy nghe giáo viên."
+      },
+      {
+        "en": "Read this sentence.",
+        "vi": "Hãy đọc câu này."
+      },
+      {
+        "en": "Write your name.",
+        "vi": "Hãy viết tên của bạn."
+      }
+    ]
+  },
+  {
+    "id": "zero-13",
+    "title": "Những điều tôi thích",
+    "note": "I like + đồ vật/hoạt động = tôi thích… Music = âm nhạc; reading = đọc sách. Không thêm am trước like.",
+    "sentences": [
+      {
+        "en": "I like music.",
+        "vi": "Tôi thích âm nhạc."
+      },
+      {
+        "en": "I like cats.",
+        "vi": "Tôi thích mèo."
+      },
+      {
+        "en": "I like reading.",
+        "vi": "Tôi thích đọc sách."
+      },
+      {
+        "en": "I like English.",
+        "vi": "Tôi thích tiếng Anh."
+      },
+      {
+        "en": "Do you like music?",
+        "vi": "Bạn có thích âm nhạc không?"
+      }
+    ]
+  },
+  {
+    "id": "zero-14",
+    "title": "Nói không",
+    "note": "I do not like = tôi không thích. Do not viết ngắn là don't. Với am dùng not ngay sau am.",
+    "sentences": [
+      {
+        "en": "I do not like coffee.",
+        "vi": "Tôi không thích cà phê."
+      },
+      {
+        "en": "I do not like rain.",
+        "vi": "Tôi không thích mưa."
+      },
+      {
+        "en": "I am not tired.",
+        "vi": "Tôi không mệt."
+      },
+      {
+        "en": "I am not a teacher.",
+        "vi": "Tôi không phải giáo viên."
+      },
+      {
+        "en": "This is not my bag.",
+        "vi": "Đây không phải túi của tôi."
+      }
+    ]
+  },
+  {
+    "id": "zero-15",
+    "title": "Ăn và uống",
+    "note": "eat = ăn; drink = uống; rice = cơm; water = nước; milk = sữa. I eat/I drink diễn tả thói quen trong bài.",
+    "sentences": [
+      {
+        "en": "I eat rice.",
+        "vi": "Tôi ăn cơm."
+      },
+      {
+        "en": "I drink water.",
+        "vi": "Tôi uống nước."
+      },
+      {
+        "en": "I drink milk.",
+        "vi": "Tôi uống sữa."
+      },
+      {
+        "en": "I like bread.",
+        "vi": "Tôi thích bánh mì."
+      },
+      {
+        "en": "I want an apple.",
+        "vi": "Tôi muốn một quả táo."
+      }
+    ]
+  },
+  {
+    "id": "zero-16",
+    "title": "Một ngày của tôi",
+    "note": "get up = thức dậy; go to school = đi học; go home = về nhà; study = học; sleep = ngủ.",
+    "sentences": [
+      {
+        "en": "I get up early.",
+        "vi": "Tôi thức dậy sớm."
+      },
+      {
+        "en": "I go to school.",
+        "vi": "Tôi đi học."
+      },
+      {
+        "en": "I study English.",
+        "vi": "Tôi học tiếng Anh."
+      },
+      {
+        "en": "I go home.",
+        "vi": "Tôi về nhà."
+      },
+      {
+        "en": "I sleep at night.",
+        "vi": "Tôi ngủ vào ban đêm."
+      }
+    ]
+  },
+  {
+    "id": "zero-17",
+    "title": "Giờ giấc",
+    "note": "at dùng trước giờ cụ thể. Seven = bảy; eight = tám. What time…? hỏi mấy giờ.",
+    "sentences": [
+      {
+        "en": "It is seven o'clock.",
+        "vi": "Bây giờ là bảy giờ."
+      },
+      {
+        "en": "It is eight o'clock.",
+        "vi": "Bây giờ là tám giờ."
+      },
+      {
+        "en": "What time is it?",
+        "vi": "Bây giờ là mấy giờ?"
+      },
+      {
+        "en": "I get up at six.",
+        "vi": "Tôi thức dậy lúc sáu giờ."
+      },
+      {
+        "en": "I go to bed at ten.",
+        "vi": "Tôi đi ngủ lúc mười giờ."
+      }
+    ]
+  },
+  {
+    "id": "zero-18",
+    "title": "Ngày trong tuần",
+    "note": "Monday = thứ Hai; Tuesday = thứ Ba; Friday = thứ Sáu; Sunday = Chủ nhật. Dùng on trước tên ngày.",
+    "sentences": [
+      {
+        "en": "Today is Monday.",
+        "vi": "Hôm nay là thứ Hai."
+      },
+      {
+        "en": "Today is Tuesday.",
+        "vi": "Hôm nay là thứ Ba."
+      },
+      {
+        "en": "I study on Friday.",
+        "vi": "Tôi học vào thứ Sáu."
+      },
+      {
+        "en": "I rest on Sunday.",
+        "vi": "Tôi nghỉ ngơi vào Chủ nhật."
+      },
+      {
+        "en": "Tomorrow is Friday.",
+        "vi": "Ngày mai là thứ Sáu."
+      }
+    ]
+  },
+  {
+    "id": "zero-19",
+    "title": "Khả năng",
+    "note": "can = có thể/biết làm; sau can dùng động từ nguyên mẫu, không thêm to. Cannot = không thể.",
+    "sentences": [
+      {
+        "en": "I can swim.",
+        "vi": "Tôi biết bơi."
+      },
+      {
+        "en": "I can read English.",
+        "vi": "Tôi có thể đọc tiếng Anh."
+      },
+      {
+        "en": "I can cook.",
+        "vi": "Tôi biết nấu ăn."
+      },
+      {
+        "en": "I cannot swim.",
+        "vi": "Tôi không biết bơi."
+      },
+      {
+        "en": "Can you help me?",
+        "vi": "Bạn có thể giúp tôi không?"
+      }
+    ]
+  },
+  {
+    "id": "zero-20",
+    "title": "Thời tiết",
+    "note": "It is + tính từ dùng nói thời tiết. Sunny = có nắng; rainy = có mưa; hot = nóng; cold = lạnh; windy = có gió.",
+    "sentences": [
+      {
+        "en": "It is sunny.",
+        "vi": "Trời có nắng."
+      },
+      {
+        "en": "It is rainy.",
+        "vi": "Trời có mưa."
+      },
+      {
+        "en": "It is hot today.",
+        "vi": "Hôm nay trời nóng."
+      },
+      {
+        "en": "It is cold today.",
+        "vi": "Hôm nay trời lạnh."
+      },
+      {
+        "en": "It is windy.",
+        "vi": "Trời có gió."
+      }
+    ]
+  },
+  {
+    "id": "zero-21",
+    "title": "Mua hàng lịch sự",
+    "note": "I would like… = tôi muốn… theo cách lịch sự; how much = bao nhiêu tiền; this one = cái này.",
+    "sentences": [
+      {
+        "en": "I would like some water.",
+        "vi": "Tôi muốn một ít nước."
+      },
+      {
+        "en": "I would like a sandwich.",
+        "vi": "Tôi muốn một chiếc bánh mì kẹp."
+      },
+      {
+        "en": "How much is it?",
+        "vi": "Nó giá bao nhiêu?"
+      },
+      {
+        "en": "I like this one.",
+        "vi": "Tôi thích cái này."
+      },
+      {
+        "en": "Thank you very much.",
+        "vi": "Cảm ơn bạn rất nhiều."
+      }
+    ]
+  },
+  {
+    "id": "zero-22",
+    "title": "Hỏi đường",
+    "note": "Excuse me dùng để mở lời lịch sự. Where = ở đâu; left = trái; right = phải; straight = thẳng.",
+    "sentences": [
+      {
+        "en": "Excuse me.",
+        "vi": "Xin phép cho tôi hỏi."
+      },
+      {
+        "en": "Where is the station?",
+        "vi": "Nhà ga ở đâu?"
+      },
+      {
+        "en": "Turn left.",
+        "vi": "Rẽ trái."
+      },
+      {
+        "en": "Turn right.",
+        "vi": "Rẽ phải."
+      },
+      {
+        "en": "Go straight ahead.",
+        "vi": "Đi thẳng về phía trước."
+      }
+    ]
+  },
+  {
+    "id": "zero-23",
+    "title": "Điều đang diễn ra",
+    "note": "am/is/are + động từ thêm ing diễn tả việc đang diễn ra. Reading = đang đọc; eating = đang ăn; studying = đang học.",
+    "sentences": [
+      {
+        "en": "I am reading a book.",
+        "vi": "Tôi đang đọc sách."
+      },
+      {
+        "en": "She is eating an apple.",
+        "vi": "Cô ấy đang ăn táo."
+      },
+      {
+        "en": "He is drinking water.",
+        "vi": "Anh ấy đang uống nước."
+      },
+      {
+        "en": "We are studying English.",
+        "vi": "Chúng tôi đang học tiếng Anh."
+      },
+      {
+        "en": "They are playing football.",
+        "vi": "Họ đang chơi bóng đá."
+      }
+    ]
+  },
+  {
+    "id": "zero-24",
+    "title": "Ôn tập và bước tiếp",
+    "note": "Ôn các mẫu đã gặp: I am, I like, I can, I would like. Hãy thử tự nhớ trước khi mở gợi ý; chưa nhớ cũng có thể học lại.",
+    "sentences": [
+      {
+        "en": "I am a student.",
+        "vi": "Tôi là học sinh."
+      },
+      {
+        "en": "I like reading books.",
+        "vi": "Tôi thích đọc sách."
+      },
+      {
+        "en": "I can speak a little English.",
+        "vi": "Tôi có thể nói một chút tiếng Anh."
+      },
+      {
+        "en": "I would like some water.",
+        "vi": "Tôi muốn một ít nước."
+      },
+      {
+        "en": "Can you help me, please?",
+        "vi": "Bạn có thể giúp tôi được không?"
+      }
+    ]
+  }
+]

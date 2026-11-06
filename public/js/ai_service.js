@@ -1,3 +1,4 @@
+import {apiFetch} from './network.js?v=6';
 // AI Service & Gemini Connection / Evaluation / Benchmark Module
 
 export class AiService {
@@ -9,7 +10,7 @@ export class AiService {
 
   async loadConfig() {
     try {
-      const res = await fetch('/api/config', {signal: AbortSignal.timeout(10000)});
+      const res = await apiFetch('/api/config', {timeoutMs:10000});
       if (res.ok) {
         const config = await res.json();
         this.hasServerKey = Boolean(config.hasServerKey);
@@ -41,9 +42,9 @@ export class AiService {
     if (!this.apiKey && !this.hasServerKey) {
       throw new Error('Vui lòng nhập API Key trước khi quét danh sách model.');
     }
-    const res = await fetch('/api/gemini/scan-models', {
+    const res = await apiFetch('/api/gemini/scan-models', {
       method: 'POST',
-      signal: AbortSignal.timeout(65000),
+      timeoutMs:65000,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ apiKey: this.apiKey })
     });
@@ -68,9 +69,9 @@ export class AiService {
   // Test a single model
   async testModel(modelToTest) {
     const model = modelToTest || this.selectedModel;
-    const res = await fetch('/api/gemini/test', {
+    const res = await apiFetch('/api/gemini/test', {
       method: 'POST',
-      signal: AbortSignal.timeout(65000),
+      timeoutMs:65000,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         apiKey: this.apiKey,
@@ -109,9 +110,9 @@ export class AiService {
 
   // Evaluate translation
   async evaluateTranslation({ vietnamese, englishUser, referenceEn, learnerName = '' }) {
-    const res = await fetch('/api/gemini/evaluate', {
+    const res = await apiFetch('/api/gemini/evaluate', {
       method: 'POST',
-      signal: AbortSignal.timeout(65000),
+      timeoutMs:65000,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         vietnamese,
@@ -129,9 +130,9 @@ export class AiService {
 
   // Generate custom lesson
   async generateLesson({ topic, level = 'intermediate', count = 5, learnerName = '' }) {
-    const res = await fetch('/api/gemini/generate-lesson', {
+    const res = await apiFetch('/api/gemini/generate-lesson', {
       method: 'POST',
-      signal: AbortSignal.timeout(65000),
+      timeoutMs:65000,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         topic,

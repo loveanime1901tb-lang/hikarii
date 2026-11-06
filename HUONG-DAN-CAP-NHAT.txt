@@ -1,0 +1,101 @@
+HIKARII LỊCH SỬ V3 — GÓI CHÉP ĐÈ
+Dành cho bộ web tab androi_104516.7z bạn đã gửi ngày 05/11/2026.
+
+1. CHÉP VÀO ĐÂU?
+Giải nén ZIP này ra một thư mục tạm. Bên trong có hai thư mục:
+  lib
+  public
+
+Mở thư mục web đang chạy — nơi chứa server_old.cjs, lib, public và data.
+Sao lưu lib/history.cjs và thư mục public/history hiện tại để có thể quay lại.
+Chép HAI THƯ MỤC lib và public từ gói cập nhật VÀO thư mục web đó.
+Chọn GỘP THƯ MỤC và GHI ĐÈ CÁC FILE TRÙNG TÊN khi được hỏi.
+
+Vị trí đúng sau khi chép:
+  [thư mục web]/lib/history.cjs
+  [thư mục web]/lib/history-v3.cjs
+  [thư mục web]/public/history/app.js
+  [thư mục web]/public/history/admin.js
+  [thư mục web]/public/history/queue.js
+  ... các file còn lại trong public/history
+
+Không chép cả lib vào bên trong public. Không xóa thư mục public/lib cũ để thay
+bằng thư mục rút gọn trong gói này: chỉ gộp và ghi đè file tương ứng.
+
+2. CHẠY LẠI
+Khởi động lại server MỘT LẦN bằng cách bạn vẫn dùng, hoặc nút Khởi động lại
+trong /admin nếu đã bật tính năng đó. Mã phía máy chủ chỉ đổi sau khi Node
+khởi động lại. Bạn không cần chạy file cài đặt CJS, không cần npm install,
+không cần cài lại tự mở server hay Serveo.
+Sau đó tải lại /lich-su và /lich-su-quan-tri. Chân trang người học có “Lịch sử v3”.
+Không xóa dữ liệu trang web để làm mới: tên/avatar, điểm và bài dở lưu ở đó.
+
+Gói không chứa hoặc ghi đè server_old.cjs, data, mật khẩu quản trị, API key,
+file tự khởi động, phần tiếng Anh hoặc thời khóa biểu.
+lib/jszip.cjs và public/assets/logo.svg đã có trong bộ web của bạn và được dùng lại.
+
+3. NHẬP ĐỀ / LỜI GIẢI
+- Đề: chọn nhiều .docx hoặc ZIP chứa .docx. ZIP có thư mục con vẫn được đọc.
+  Tối đa 8 MB mỗi Word, 32 MB mỗi ZIP, 300 đề/lượt; tổng nội dung tối đa 96 MB.
+  Chọn nhóm và bài/chủ đề cho đề mới, bấm Tải file đã chọn.
+  Mỗi đề giữ cấu trúc 24 trắc nghiệm + 4 đúng/sai và hai bảng đáp án theo mẫu cũ.
+  Không hỗ trợ Word .doc cũ hoặc đề chứa hình ảnh qua bộ nhận diện này.
+- Lời giải: chọn ZIP hoặc nhiều JSON. Tối đa 8 MB/ZIP, 512 KB/JSON, 300 file/lượt.
+  Bấm Kiểm tra ZIP / JSON lời giải, xem bảng đối chiếu rồi bấm Cập nhật.
+  Mỗi JSON phải theo mẫu lời giải Hikarii đang dùng. Nhập ZIP không đổi định dạng.
+- ZIP được mở tại trình duyệt, rồi gửi từng file. Máy chủ không nhận cả ZIP trong
+  một yêu cầu dài. Đừng đóng tab quản trị trong lúc đang chạy lượt nhập.
+- Mất mạng: hệ thống tự thử lại lỗi kết nối tối đa hai lần. File lỗi không làm
+  dừng các file khác (hết phiên đăng nhập thì tạm dừng). Dùng nút Thử lại để
+  gửi tiếp phần lỗi/chưa xong. Đăng nhập /admin ở tab khác nếu phiên đã hết.
+- Nếu đóng tab giữa chừng: chọn lại gói. Word cùng tên và cùng nội dung được bỏ
+  qua; lời giải giống nội dung đã lưu hiện “Không thay đổi”. Không đổi tên Word
+  đã nhập nếu muốn cập nhật đúng đề cũ; tên file được dùng để nhận diện đề.
+- Hai Word trùng tên trong các thư mục của cùng gói bị chặn để tránh ghi đè nhầm.
+  Nhiều JSON cùng khớp một đề cũng bị chặn; chỉ chọn một lời giải cho mỗi đề.
+- Lời giải được sao lưu trước khi ghi trong data/history/explanation-backups.
+  Phiếu xem trước từng JSON dùng được trong 24 giờ, còn hiệu lực sau khi server
+  khởi động lại. Gửi lại phiếu đã áp dụng không ghi lặp.
+
+4. PHÂN LOẠI
+Có Tổng ôn THPT, Học kỳ I, Học kỳ II, Theo bài/chủ đề; tất cả vẫn 24 + 4.
+Đề cũ chưa có phân loại được hiển thị trong Tổng ôn THPT, không phải nhập lại.
+Ở quản trị: lọc/chọn nhiều đề, chọn nhóm và nhập tên bài rồi Lưu phân loại đã chọn.
+Có thể sửa từng đề trong Xem / sửa / đăng. Để trống ô bài sẽ xóa nhãn bài khi lưu.
+Ở trang người học: lọc nhóm/bài; random ưu tiên đề chưa làm trong nhóm/bài đang lọc.
+Số đề được sắp theo số trong từng nhóm trạng thái; bài đã làm vẫn nằm dưới cùng.
+
+5. CẬP NHẬT ĐỀ VÀ BÀI DỞ
+- Sửa tên, thời gian, phân loại hoặc lời giải không thay phiên bản câu hỏi.
+- Đổi câu hỏi/đáp án: lưu phiên bản cũ trong data/history/versions, để bài đã
+  bắt đầu theo phiên bản cũ vẫn nộp và hỏi AI được.
+- Nhập Word đã sửa: lời giải của câu có cùng nội dung, lựa chọn và đáp án được giữ.
+  Câu thay đổi không tự nhận lại lời giải cũ. Đề có nội dung đổi thành bản nháp
+  để quản trị kiểm tra rồi đăng; phân loại/tên tùy chỉnh được giữ.
+- Cơ chế giữ phiên bản bắt đầu từ bản cập nhật này. Không thể phục hồi phiên bản
+  đã bị ghi đè từ trước mà không có bản sao.
+
+6. NGƯỜI HỌC
+- Logo cuốn sách ở đầu trang dẫn về danh sách đề Sử. Liên kết Tiếng Anh ở cuối.
+- Tên/avatar dùng chung hồ sơ Tiếng Anh ở cùng tên miền và trình duyệt. Không có
+  đồng bộ giữa các máy; đổi địa chỉ Serveo/trình duyệt có thể dùng vùng lưu khác.
+- A− / A+ / Mặc định: đổi cỡ chữ câu hỏi, đáp án và lời giải; ghi nhớ trên thiết bị.
+- Sau khi nộp: trắc nghiệm đúng có ✓ xanh; lựa chọn sai có ✕ đỏ, đáp án đúng có ✓
+  xanh. Không thêm chữ “Bạn chọn” ở trắc nghiệm. Ý bỏ trống ghi Chưa trả lời.
+- Đúng/sai: mỗi ý có nhãn Bạn chọn và Đáp án, kèm biểu tượng/màu; bỏ trống riêng.
+- Quản lý dữ liệu: xem dung lượng ước tính, sao lưu, xóa chat AI hoặc chọn lịch sử
+  / bài dở cần xóa. Không tự xóa điểm cũ. Điểm cao nhất tính từ lịch sử còn giữ.
+- Nếu bộ nhớ đầy: có cảnh báo chưa lưu và nút tải bản sao; không báo đã tự lưu.
+- Đổi màn hình khi chờ nộp bài/AI: phản hồi vẫn lưu vào đúng bài, không đè màn hình khác.
+
+7. KIỂM TRA ĐÃ THỰC HIỆN
+- API trên bản server mới của bạn, dữ liệu thử độc lập: nhập 100 Word và 100 bộ
+  lời giải; thử lại, file hỏng, phân loại, ẩn/xóa/khôi phục, chấm 10/10, bài dở
+  theo phiên bản cũ, giữ lời giải, và khởi động lại giữa kiểm tra/áp dụng lời giải.
+- Kiểm tra logic trang bằng môi trường DOM mô phỏng: ZIP 100 file có thư mục con,
+  lỗi ở file 13 rồi tiếp tục và thử lại; JSON lỗi; áp dụng một phần rồi gửi lại;
+  sắp số, dấu đáp án, font, hồ sơ, nộp bài/AI trong lúc đổi màn hình, sao lưu.
+- Kiểm tra phản hồi rỗng/JSON bị cắt/HTML lỗi và hết phiên đăng nhập.
+- AI dùng phản hồi giả lập trong kiểm thử, không gọi Gemini thật.
+- Chưa kiểm thử trực tiếp trên tablet, đường hầm Serveo hay bố cục bằng trình duyệt
+  thật trong môi trường này. Giới hạn đường truyền thực tế vẫn phụ thuộc kết nối.

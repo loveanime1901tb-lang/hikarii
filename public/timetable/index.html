@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TKB Glass">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='128' fill='%23050811'/><rect x='48' y='48' width='416' height='416' rx='96' fill='%230ea5e9' fill-opacity='0.25' stroke='%2338bdf8' stroke-width='16'/><path d='M160 160h192v64H160zM160 256h192v48H160zM160 336h128v48H160z' fill='%23ffffff'/><circle cx='384' cy='360' r='36' fill='%2338bdf8'/></svg>">
+<title>Thiết Kế Thời Khóa Biểu</title>
+
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="workspace.css?v=tapfix4">
+</head>
+<body>
+  <canvas id="effectCanvas" style="position: fixed; inset: 0; z-index: -1; pointer-events: none; width: 100vw; height: 100vh;"></canvas>
+  <audio id="bgMusic" loop preload="none" style="display: none;"></audio>
+
+  <!-- Top Bar & Controls -->
+  <div class="top-bar-wrapper">
+    <div class="app-header">
+      <div class="app-brand">
+        <span>✨</span> Thiết Kế Thời Khóa Biểu
+      </div>
+      <div class="header-actions">
+        <button class="btn-clear" id="clearDataBtn" title="Làm trống tiết học; giữ thiết kế và ảnh nền">Xóa các tiết học</button>
+        <button class="toggle-btn" id="toggleBar">✨ Thiết kế & Tùy chỉnh</button>
+        <button class="btn-export" id="quickExportBtn">📥 Xuất Ảnh</button>
+      </div>
+    </div>
+
+    <!-- Tabbed Toolbar -->
+    <div class="toolbar" id="toolBox" style="display: none;">
+      <div class="nav-tabs">
+        <div class="nav-tab active" data-tab="tab-info">📝 Nội dung & Thời gian</div>
+        <div class="nav-tab" data-tab="tab-layout">🎨 Phong cách & Giao diện</div>
+        <div class="nav-tab" data-tab="tab-style">✨ Sắc màu & Hiệu ứng kính</div>
+        <div class="nav-tab" data-tab="tab-media">🎵 Nhạc & Hiệu ứng</div>
+      </div>
+
+      <!-- Tab 1: Thông tin -->
+      <div class="tab-pane active" id="tab-info">
+        <div class="settings-group">
+          <div class="settings-group-title">🏷️ Tiêu đề & Lớp học</div>
+          <div class="field">
+            <label>Tên lớp hoặc Tiêu đề chính</label>
+            <input type="text" id="titleInput" value="THỜI KHÓA BIỂU 12A5">
+          </div>
+          <div class="field">
+            <label>Tên trường hoặc Niên khóa</label>
+            <input type="text" id="subInput" value="Năm học 2026 - 2027 • Lớp 12A5">
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <div class="settings-group-title">🕒 Cài đặt Ca học</div>
+          <div class="field">
+            <div class="switch-field">
+              <label for="afternoonToggle">🌞 Kích hoạt ca học buổi chiều</label>
+              <input type="checkbox" id="afternoonToggle">
+            </div>
+          </div>
+          <div class="field" id="splitImageOption" style="display: none;">
+            <div class="switch-field" style="background: rgba(14, 165, 233, 0.12); border-color: rgba(14, 165, 233, 0.35);">
+              <label for="splitImageToggle" style="color: #38bdf8;">✂️ Xuất riêng 2 ảnh (Sáng và Chiều)</label>
+              <input type="checkbox" id="splitImageToggle">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Bố cục & Ảnh nền -->
+      <div class="tab-pane" id="tab-layout">
+        <div class="settings-group">
+          <div class="settings-group-title">🖼️ Ảnh nền tùy chọn</div>
+          <div class="field">
+            <label>Chọn ảnh từ thiết bị</label>
+            <div class="file-input-wrap">
+              <input type="file" id="bgInput" accept="image/*">
+              <button type="button" class="btn-remove-bg" id="removeBgBtn" style="display: none;">🗑️ Xóa</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Độ tối nền (Giúp chữ nổi bật hơn)</label>
+            <select id="overlaySelect">
+              <option value="rgba(0,0,0,0.15)">Tối nhẹ (15%)</option>
+              <option value="rgba(0,0,0,0.35)">Tối vừa (35%)</option>
+              <option value="rgba(0,0,0,0.55)">Tối đậm (55%)</option>
+              <option value="rgba(255,255,255,0.18)">Trắng mờ (18%)</option>
+              <option value="transparent">Không phủ (0%)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <div class="settings-group-title">📐 Bố cục & Tỉ lệ</div>
+          <div class="field">
+            <label>Phong cách bố cục (Layout)</label>
+            <select id="layoutSelect">
+              <option value="bento">🍱 Thẻ Bento Kính Nổi (Chuẩn Apple)</option>
+              <option value="floating" selected>🌸 Bảng Kính Nổi Không Khung (Pastel Clean - Mới)</option>
+              <option value="studio">✨ Thẻ Studio Động (Hiện đại & Sắc nét)</option>
+              <option value="split">🌗 Phân Tách Ca Sáng/Chiều (Khoa học)</option>
+              <option value="table">▦ Bảng Lưới Kính Tối Giản (Tiêu chuẩn)</option>
+              <option value="holographic">🌌 Thẻ Kính Ba Chiều (Holographic 3D)</option>
+              <option value="basic">📄 Bảng Cơ Bản (Truyền thống)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Tỉ lệ ảnh xuất</label>
+            <select id="ratioSelect">
+              <option value="9:16">📱 Dọc (9:16 - Story / ĐT)</option>
+              <option value="3:4">💊 Dọc (3:4 - iPad / Tablet)</option>
+              <option value="1:1">🟩 Vuông To (1:1 - 2000px)</option>
+              <option value="1:1-std">🟥 Vuông chuẩn (1:1 - 1200px)</option>
+              <option value="16:9" selected>💻 Ngang (16:9 - Laptop / PC)</option>
+              <option value="16:10">🖥️ Ngang rộng (16:10)</option>
+              <option value="4:3">📺 Ngang vừa (4:3)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Màu sắc & Kính -->
+      <div class="tab-pane" id="tab-style">
+        <div class="settings-group">
+          <div class="settings-group-title">🎨 Bảng màu & Chữ</div>
+          <div class="field">
+            <label>Cách phối màu chữ môn học</label>
+            <select id="textModeSelect">
+              <option value="auto" selected>Thông minh (Tự động chống chìm màu)</option>
+              <option value="custom">Tùy chỉnh thủ công</option>
+            </select>
+          </div>
+          <div class="field" id="customSubjectColorField" style="display: none;">
+            <label>Tuỳ chỉnh màu chữ thủ công</label>
+            <input type="color" id="subjectColor" value="#ffffff" style="height: 38px;">
+          </div>
+          <div class="color-picker-group">
+            <div class="color-field">
+              <label>Màu chủ đạo</label>
+              <input type="color" id="accentColor" value="#0ea5e9">
+            </div>
+            <div class="color-field">
+              <label>Màu Tiêu Đề</label>
+              <input type="color" id="titleColor" value="#ffffff">
+            </div>
+            <div class="color-field">
+              <label>Màu chữ phụ</label>
+              <input type="color" id="subtextColor" value="#cbd5e1">
+            </div>
+            <div class="color-field">
+              <label>Màu giờ học</label>
+              <input type="color" id="timeColor" value="#38bdf8">
+            </div>
+          </div>
+          <div class="field" style="margin-top: 4px;">
+            <label>Phối màu mẫu nhanh</label>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="preset-btn" data-color="#e0629c" style="background:#e0629c; border:none; color:#fff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer;">🌸 Hồng Pastel</button>
+              <button type="button" class="preset-btn" data-color="#0ea5e9" style="background:#0ea5e9; border:none; color:#fff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer;">💎 Xanh Cyan</button>
+              <button type="button" class="preset-btn" data-color="#a855f7" style="background:#a855f7; border:none; color:#fff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer;">🟣 Tím Cyber</button>
+              <button type="button" class="preset-btn" data-color="#10b981" style="background:#10b981; border:none; color:#fff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer;">🟢 Ngọc Lục Bảo</button>
+              <button type="button" class="preset-btn" data-color="#f59e0b" style="background:#f59e0b; border:none; color:#fff; padding:5px 10px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer;">🟠 Hổ Phách</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <div class="settings-group-title">💧 Hiệu ứng Liquid Glass</div>
+          <div class="field">
+            <label>Độ mờ kính Liquid</label>
+            <select id="glassOpacity">
+              <option value="0.025">Siêu trong suốt</option>
+              <option value="0.12" selected>Liquid Glass chuẩn</option>
+              <option value="0.24">Mờ đậm vừa phải</option>
+              <option value="0.38">Mờ đục</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Nhạc & Hiệu ứng -->
+      <div class="tab-pane" id="tab-media">
+        <div class="settings-group">
+          <div class="settings-group-title">🎧 Nhạc Nền Tùy Chọn</div>
+          <div class="field">
+            <label>Tệp âm thanh nhạc nền</label>
+            <input type="file" id="audioInput" accept="audio/*" style="display: none;">
+            <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+              <button type="button" class="btn btn-secondary" onclick="document.getElementById('audioInput').click()" style="padding: 8px 14px; font-size: 13px;">📁 Chọn tệp nhạc</button>
+              <button type="button" class="btn btn-secondary" id="removeAudioBtn" style="display: none; padding: 8px 14px; font-size: 13px; color: #f87171; border-color: rgba(248,113,113,0.3);">🗑️ Xóa nhạc</button>
+            </div>
+            <div id="audioFileName" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Chưa chọn bài nào</div>
+          </div>
+          <div class="field">
+            <label>Âm lượng</label>
+            <input type="range" id="audioVolume" min="0" max="1" step="0.05" value="0.5" style="width: 100%;">
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <div class="settings-group-title">✨ Hiệu Ứng Hình Nền</div>
+          <div class="field">
+            <label>Hiệu ứng động toàn màn hình</label>
+            <select id="effectSelect">
+              <option value="none" selected>Không có</option>
+              <option value="sakura">🌸 Hoa anh đào rơi</option>
+              <option value="rain">🌧️ Mưa rơi</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workspace Preview & Quick Editor -->
+  <div class="preview-section">
+    <div class="preview-container">
+      <div class="preview-notice">💡 Chạm trực tiếp vào ô tiết trên ảnh để sửa nhanh môn học</div>
+      <div class="canvas-stage">
+        <canvas id="mainCanvas"></canvas>
+      </div>
+      <div class="preview-switcher" id="previewSwitcher" style="display: none;">
+        <button class="preview-switch-btn active" data-view="morning">Ảnh 1: Sáng</button>
+        <button class="preview-switch-btn" data-view="afternoon">Ảnh 2: Chiều</button>
+      </div>
+    </div>
+
+    <!-- Quick Editor Panel -->
+    <div class="editor-card">
+      <div class="editor-header">
+        <span class="editor-title">✏️ Chỉnh sửa nhanh môn học</span>
+        <div class="day-tabs">
+          <div class="day-tab active" data-day="0">Thứ 2</div>
+          <div class="day-tab" data-day="1">Thứ 3</div>
+          <div class="day-tab" data-day="2">Thứ 4</div>
+          <div class="day-tab" data-day="3">Thứ 5</div>
+          <div class="day-tab" data-day="4">Thứ 6</div>
+        </div>
+      </div>
+      <div class="periods-list" id="periodsEditorList"></div>
+    </div>
+  </div>
+
+  <!-- Subject Picker Drawer -->
+  <div class="drawer-mask" id="drawerMask"></div>
+  <div class="drawer" id="subjectDrawer">
+    <div class="drawer-head">
+      <span class="drawer-title" id="drawerTarget">Chọn môn</span>
+      <button class="close-btn" id="closeDrawer">✕</button>
+    </div>
+    <div class="custom-subject-box">
+      <input type="text" id="customSubject" placeholder="Tên môn khác...">
+      <input type="text" id="customTeacher" placeholder="Giáo viên (tùy chọn)...">
+      <button id="addCustomBtn">Áp dụng</button>
+    </div>
+    <div class="subject-grid" id="subjectPicker"></div>
+  </div>
+
+  <!-- Modal Preview / Download Support -->
+  <div class="modal" id="previewModal" role="dialog" aria-label="Xem ảnh thời khóa biểu đã xuất" aria-modal="true">
+    <div class="tkb-modal-header"><strong>Xem ảnh đã xuất</strong><button class="modal-btn" type="button" id="closeModal">✕ Đóng</button></div>
+    <img id="modalImg" src="" alt="Thời khóa biểu">
+    <div class="modal-tip">Ảnh đã có trong mục Xuất & sao lưu để tải lại khi cần.</div>
+    <div class="modal-btns">
+      <button class="modal-btn primary" type="button" id="shareImageBtn">📤 Chia sẻ</button>
+    </div>
+  </div>
+
+<script src="editor.js?v=tapfix5"></script><script src="workspace.js?v=3"></script></body></html>
